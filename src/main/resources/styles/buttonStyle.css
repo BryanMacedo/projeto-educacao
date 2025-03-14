@@ -1,0 +1,16 @@
+.button {
+    -fx-background-color: transparent; /* Fundo transparente */
+    -fx-border-color: transparent; /* Borda transparente */
+    -fx-text-fill: #8B0000; /* Cor do texto */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-padding: 0; /* Remove o padding */
+    -fx-cursor: hand; /* Muda o cursor para a mão ao passar o mouse */
+    -fx-scale-x: 1; /* Tamanho normal */
+    -fx-scale-y: 1; /* Tamanho normal */
+    -fx-font-weight: bold; /* Texto em negrito */
+}
+
+.button:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
