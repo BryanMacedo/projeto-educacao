@@ -1,7 +1,7 @@
 .button {
     -fx-background-color: transparent; /* Fundo transparente */
     -fx-border-color: transparent; /* Borda transparente */
-    -fx-text-fill: #8B0000; /* Cor do texto */
+    -fx-text-fill: #000000; /* Cor do texto */
     -fx-font-size: 14px; /* Tamanho da fonte */
     -fx-padding: 0; /* Remove o padding */
     -fx-cursor: hand; /* Muda o cursor para a mão ao passar o mouse */

@@ -1,11 +1,15 @@
 package guiClasses.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -23,7 +27,15 @@ public class MainViewController implements Initializable {
 
     @FXML
     private void onButtonRegisterUsersAction() {
-        System.out.println("onButtonRegisterUsersAction: esta funcionado!");
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/RegisterUser.fxml"));
+            Parent root = loader.load();
+
+            Scene scene = buttonRegisterUsers.getScene();
+            scene.setRoot(root);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
@@ -58,7 +70,5 @@ public class MainViewController implements Initializable {
         buttonRegisterUsers.setGraphic(registerIconImageView);
         buttonPlay.setGraphic(playIconImageView);
         buttonRanking.setGraphic(rankingIconImageView);
-
-
     }
 }
