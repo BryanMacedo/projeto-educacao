@@ -1,10 +1,12 @@
 package org.bryanmacedo.separacaosilabica;
 
+import guiClasses.controller.MainViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,7 +25,7 @@ public class Main extends Application {
             primaryStage.setScene(mainScene);
             primaryStage.setTitle("Separação silábica");
 
-            Image icon = new Image(getClass().getResourceAsStream("/imgs/iconeTemporario.png"));
+            Image icon = new Image(getClass().getResourceAsStream("/imgs/icons/iconeTemporario.png"));
             primaryStage.getIcons().add(icon);
 
             primaryStage.show();
