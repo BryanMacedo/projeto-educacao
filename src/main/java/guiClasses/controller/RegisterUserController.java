@@ -6,6 +6,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -16,6 +19,16 @@ import java.util.ResourceBundle;
 public class RegisterUserController implements Initializable {
     @FXML
     private Button buttonBackArrow;
+
+    @FXML
+    private RadioButton rbStudent;
+
+    @FXML
+    private RadioButton rbTeacher;
+
+    @FXML
+    private ToggleGroup toggleGroupUsers;
+
 
     @FXML
     private void onButtonBackArrowAction() {
