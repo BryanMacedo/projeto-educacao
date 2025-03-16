@@ -28,7 +28,7 @@ public class MainViewController implements Initializable {
     @FXML
     private void onButtonRegisterUsersAction() {
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/RegisterUser.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/RegisterUserView.fxml"));
             Parent root = loader.load();
 
             Scene scene = buttonRegisterUsers.getScene();
@@ -40,7 +40,15 @@ public class MainViewController implements Initializable {
 
     @FXML
     private void onButtonPlayAction() {
-        System.out.println("onButtonPlayAction: esta funcionado!");
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/LoginUserView.fxml"));
+            Parent root = loader.load();
+
+            Scene scene = buttonPlay.getScene();
+            scene.setRoot(root);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
