@@ -13,17 +13,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LoginUserViewController implements Initializable {
-    @FXML
-    private Button btEnter;
-
+public class PlayViewController implements Initializable {
     @FXML
     private Button btBackArrow;
 
     @FXML
     private void onBtBackArrowAction(){
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/LoginUserView.fxml"));
             Parent root = loader.load();
 
             Scene scene = btBackArrow.getScene();
@@ -33,18 +30,6 @@ public class LoginUserViewController implements Initializable {
         }
     }
 
-    @FXML
-    private void onBtEnterAction(){
-        try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/PlayView.fxml"));
-            Parent root = loader.load();
-
-            Scene scene = btEnter.getScene();
-            scene.setRoot(root);
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
