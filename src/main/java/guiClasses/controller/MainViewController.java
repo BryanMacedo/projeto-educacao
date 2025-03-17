@@ -53,7 +53,15 @@ public class MainViewController implements Initializable {
 
     @FXML
     private void onButtonRankingAction() {
-        System.out.println("onButtonRankingAction: esta funcionado!");
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/RankingView.fxml"));
+            Parent root = loader.load();
+
+            Scene scene = buttonRanking.getScene();
+            scene.setRoot(root);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
