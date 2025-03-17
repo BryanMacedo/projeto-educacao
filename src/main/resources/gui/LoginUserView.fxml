@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiClasses.controller.LoginUserViewController">
    <children>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+      <VBox alignment="CENTER" layoutY="6.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0">
          <children>
             <HBox alignment="CENTER" prefHeight="28.0" prefWidth="600.0">
                <children>
@@ -44,7 +44,7 @@
                </VBox.margin>
             </HBox>
             <HBox alignment="CENTER" prefHeight="0.0" prefWidth="600.0" />
-            <Button fx:id="btEnter" alignment="CENTER" mnemonicParsing="false" onAction="#onbtEnterAction" text="ENTAR">
+            <Button fx:id="btEnter" alignment="CENTER" mnemonicParsing="false" onAction="#onBtEnterAction" text="ENTAR">
                <font>
                   <Font size="14.0" />
                </font>
@@ -53,5 +53,14 @@
                </VBox.margin>
             </Button>
          </children></VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Button fx:id="btBackArrow" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#onBtBackArrowAction">
+               <VBox.margin>
+                  <Insets left="10.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
