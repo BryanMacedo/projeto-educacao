@@ -17,21 +17,21 @@ public class MainViewController implements Initializable {
     // AO CRIAR UM CONTROLLER VERIFICAR SE O MODULO-INFO.JAVA ESTA ABRINDO E EXPORTANDO A CLASSE
 
     @FXML
-    private Button buttonRegisterUsers;
+    private Button btRegisterUsers;
 
     @FXML
-    private Button buttonPlay;
+    private Button btPlay;
 
     @FXML
-    private Button buttonRanking;
+    private Button btRanking;
 
     @FXML
-    private void onButtonRegisterUsersAction() {
+    private void onBtRegisterUsersAction() {
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/RegisterUserView.fxml"));
             Parent root = loader.load();
 
-            Scene scene = buttonRegisterUsers.getScene();
+            Scene scene = btRegisterUsers.getScene();
             scene.setRoot(root);
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -39,12 +39,12 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
-    private void onButtonPlayAction() {
+    private void onBtPlayAction() {
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/LoginUserView.fxml"));
             Parent root = loader.load();
 
-            Scene scene = buttonPlay.getScene();
+            Scene scene = btPlay.getScene();
             scene.setRoot(root);
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -52,12 +52,12 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
-    private void onButtonRankingAction() {
+    private void onBtRankingAction() {
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/RankingView.fxml"));
             Parent root = loader.load();
 
-            Scene scene = buttonRanking.getScene();
+            Scene scene = btRanking.getScene();
             scene.setRoot(root);
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -83,8 +83,8 @@ public class MainViewController implements Initializable {
         rankingIconImageView.setFitWidth(20);
         rankingIconImageView.setFitHeight(20);
 
-        buttonRegisterUsers.setGraphic(registerIconImageView);
-        buttonPlay.setGraphic(playIconImageView);
-        buttonRanking.setGraphic(rankingIconImageView);
+        btRegisterUsers.setGraphic(registerIconImageView);
+        btPlay.setGraphic(playIconImageView);
+        btRanking.setGraphic(rankingIconImageView);
     }
 }

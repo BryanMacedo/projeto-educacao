@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class RegisterUserViewController implements Initializable {
     @FXML
-    private Button buttonBackArrow;
+    private Button btBackArrow;
 
     @FXML
     private RadioButton rbStudent;
@@ -30,12 +30,12 @@ public class RegisterUserViewController implements Initializable {
 
 
     @FXML
-    private void onButtonBackArrowAction() {
+    private void onBtBackArrowAction() {
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
             Parent root = loader.load();
 
-            Scene scene = buttonBackArrow.getScene();
+            Scene scene = btBackArrow.getScene();
             scene.setRoot(root);
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -52,7 +52,7 @@ public class RegisterUserViewController implements Initializable {
         backArrowIconImageView.setFitWidth(30);
         backArrowIconImageView.setFitHeight(30);
 
-        buttonBackArrow.setGraphic(backArrowIconImageView);
+        btBackArrow.setGraphic(backArrowIconImageView);
 
     }
 }

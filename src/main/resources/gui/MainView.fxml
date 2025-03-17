@@ -8,9 +8,9 @@
    <children>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0"> <!-- os últimos 4 comando alinham os itens no centro-->
          <children>
-            <Button fx:id="buttonRegisterUsers" mnemonicParsing="false" onAction="#onButtonRegisterUsersAction" text="CADASTRAR ALUNO/PROFESSOR" />
-            <Button fx:id="buttonPlay" mnemonicParsing="false" onAction="#onButtonPlayAction" text="COMEÇAR A JOGAR" />
-            <Button fx:id="buttonRanking" mnemonicParsing="false" onAction="#onButtonRankingAction" text="RANKING" />
+            <Button fx:id="btRegisterUsers" mnemonicParsing="false" onAction="#onBtRegisterUsersAction" text="CADASTRAR ALUNO/PROFESSOR" />
+            <Button fx:id="btPlay" mnemonicParsing="false" onAction="#onBtPlayAction" text="COMEÇAR A JOGAR" />
+            <Button fx:id="btRanking" mnemonicParsing="false" onAction="#onBtRankingAction" text="RANKING" />
          </children>
       </VBox>
    </children>
