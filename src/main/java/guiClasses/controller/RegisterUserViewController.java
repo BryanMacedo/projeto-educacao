@@ -12,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import model.entities.User;
 import model.services.LoginAndPasswordMaker;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.IOException;
 import java.net.URL;
@@ -92,7 +93,21 @@ public class RegisterUserViewController implements Initializable {
             String login = maker.getLogin();
             String password = maker.getPassword();
 
-            //showAlertRegister("Novo usuário", "Novo usuário cadastrado!");
+
+            String passwordHash = BCrypt.hashpw(password, BCrypt.gensalt());
+
+            try {
+                conn = DB.getConnection();
+                //UPDATE tabela SET coluna1 = valor1, coluna2 = valor2 WHERE condição;
+                st = conn.prepareStatement("UPDATE users SET Login = ?, Password = ? WHERE FirstName = ? ");
+                st.setString(1, login);
+                st.setString(2, passwordHash);
+                st.setString(3, newUser.getFirstName());
+                st.executeUpdate();
+            } catch (SQLException e) {
+                throw new DbException(e.getMessage());
+            }
+
             showAlertRegister("Novo usuário cadastrado!", "Seu Login é: " + login + "\nE sua senha é: " + password);
 
             try{

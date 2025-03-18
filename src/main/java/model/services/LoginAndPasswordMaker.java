@@ -27,16 +27,12 @@ public class LoginAndPasswordMaker {
             if (rs.next()) {
                 userId = rs.getInt("Id");
             }
-
-
             String earlyLastName = lastName.substring(0, 2);
             login = firstName + earlyLastName + userId;
 
             String earlyFirstName = firstName.substring(0,2);
             String formatDateOfBirth = dateOfBirth.replace("-", "");
             password = earlyFirstName + formatDateOfBirth;
-
-
 
             System.out.println(login);
             System.out.println(password);
