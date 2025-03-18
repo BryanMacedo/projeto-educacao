@@ -12,12 +12,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiClasses.controller.RegisterUserViewController">
    <children>
-      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <HBox alignment="CENTER" prefHeight="23.0" prefWidth="600.0">
                      <children>
@@ -60,7 +59,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <TextField>
+                        <TextField fx:id="tfName">
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin>
@@ -77,7 +76,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <DatePicker>
+                        <DatePicker fx:id="dpDateOfBirth">
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin>
@@ -94,7 +93,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <RadioButton mnemonicParsing="false" text="MENINO">
+                        <RadioButton fx:id="rbBoy" mnemonicParsing="false" text="MENINO">
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin>
@@ -105,7 +104,7 @@
                               <ToggleGroup fx:id="toggleGroupSex" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" text="MENINA" toggleGroup="$toggleGroupSex">
+                        <RadioButton fx:id="rbGirl" mnemonicParsing="false" text="MENINA" toggleGroup="$toggleGroupSex">
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin>
@@ -117,9 +116,9 @@
                   </HBox>
                </children>
             </VBox>
-            <VBox alignment="CENTER" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="CADASTRAR" />
+                  <Button fx:id="btRegisterUser" alignment="CENTER" mnemonicParsing="false" onAction="#onBtRegisterUserAction" text="CADASTRAR" />
                </children>
             </VBox>
          </children>
