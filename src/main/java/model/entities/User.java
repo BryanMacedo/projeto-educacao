@@ -2,13 +2,15 @@ package model.entities;
 
 public class User {
     private String typeUser;
-    private String userName;
+    private String firstName;
+    private String lastName;
     private String dateOfBirth;
     private String sexUser;
 
-    public User(String typeUser, String userName, String dateOfBirth, String sexUser) {
+    public User(String typeUser, String firstName, String lastName, String dateOfBirth, String sexUser) {
         this.typeUser = typeUser;
-        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.sexUser = sexUser;
     }
@@ -17,8 +19,9 @@ public class User {
     public String toString() {
         return "User{" +
                 "typeUser='" + typeUser + '\'' +
-                ", userName='" + userName + '\'' +
-                ", DateOfBirth='" + dateOfBirth + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", sexUser='" + sexUser + '\'' +
                 '}';
     }
@@ -27,8 +30,12 @@ public class User {
         return typeUser;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public String getDateOfBirth() {

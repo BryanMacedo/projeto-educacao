@@ -59,7 +59,21 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="tfName">
+                        <TextField fx:id="tfFirstName">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="31.0" prefWidth="600.0">
+                     <children>
+                        <Label text="SOBRENOME">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfLastName">
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin>

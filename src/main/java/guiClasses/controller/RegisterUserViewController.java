@@ -11,13 +11,11 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import model.entities.User;
+import model.services.LoginAndPasswordMaker;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class RegisterUserViewController implements Initializable {
@@ -37,7 +35,10 @@ public class RegisterUserViewController implements Initializable {
     private ToggleGroup toggleGroupSex;
 
     @FXML
-    private TextField tfName;
+    private TextField tfFirstName;
+
+    @FXML
+    private TextField tfLastName;
 
     @FXML
     private DatePicker dpDateOfBirth;
@@ -53,27 +54,30 @@ public class RegisterUserViewController implements Initializable {
 
     @FXML
     private void onBtRegisterUserAction(){
-        if (toggleGroupUsers.getSelectedToggle() == null || tfName.getText().isEmpty() || dpDateOfBirth.getValue() == null || toggleGroupSex.getSelectedToggle() == null){
+        if (toggleGroupUsers.getSelectedToggle() == null || tfFirstName.getText().isEmpty() || tfLastName.getText().isEmpty() || dpDateOfBirth.getValue() == null || toggleGroupSex.getSelectedToggle() == null){
             showAlertError("Campos não preenchidos.", "Por favor preencha todos os campos do formulário.");
         }else {
             String userType = rbStudent.isSelected() ? "Aluno" : "Professor";
-            String userName = tfName.getText();
+            String firstName = tfFirstName.getText();
+            String lastName = tfLastName.getText();
             String dateOfBirth = dpDateOfBirth.getValue().toString();
             String sexUser = rbBoy.isSelected() ? "Menino" : "Menina";
 
-            User newUser = new User(userType, userName, dateOfBirth, sexUser);
+            User newUser = new User(userType,firstName,lastName,dateOfBirth,sexUser);
             System.out.println(newUser);
 
             Connection conn = null;
             PreparedStatement st = null;
+            ResultSet rs = null;
 
             try {
                 conn = DB.getConnection();
-                st = conn.prepareStatement("INSERT INTO users (FullName, TypeUser, DateOfBirth, Gender) VALUES (?,?,?,?)");
-                st.setString(1, newUser.getUserName());
-                st.setString(2, newUser.getTypeUser());
-                st.setString(3, newUser.getDateOfBirth());
-                st.setString(4, newUser.getSexUser());
+                st = conn.prepareStatement("INSERT INTO users (FirstName, LastName, TypeUser, DateOfBirth, Gender) VALUES (?,?,?,?,?)");
+                st.setString(1, newUser.getFirstName());
+                st.setString(2, newUser.getLastName());
+                st.setString(3, newUser.getTypeUser());
+                st.setString(4, newUser.getDateOfBirth());
+                st.setString(5, newUser.getSexUser());
                 st.executeUpdate();
 
             } catch (SQLException e) {
@@ -81,6 +85,9 @@ public class RegisterUserViewController implements Initializable {
             }finally {
                 DB.closeStatement(st);
             }
+
+            LoginAndPasswordMaker maker = new LoginAndPasswordMaker();
+            maker.makerLoginAndPassword(firstName, lastName, dateOfBirth);
 
 
             showAlertRegister("Novo usuário", "Novo usuário cadastrado!");
