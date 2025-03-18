@@ -7,9 +7,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 
 public class LoginAndPasswordMaker {
+    private String login;
+    private String password;
 
     public void makerLoginAndPassword(String firstName, String lastName, String dateOfBirth) {
         Connection conn = null;
@@ -29,11 +30,11 @@ public class LoginAndPasswordMaker {
 
 
             String earlyLastName = lastName.substring(0, 2);
-            String login = firstName + earlyLastName + userId;
+            login = firstName + earlyLastName + userId;
 
             String earlyFirstName = firstName.substring(0,2);
             String formatDateOfBirth = dateOfBirth.replace("-", "");
-            String password = earlyFirstName + formatDateOfBirth;
+            password = earlyFirstName + formatDateOfBirth;
 
 
 
@@ -44,5 +45,13 @@ public class LoginAndPasswordMaker {
             throw new DbException(e.getMessage());
         }
 
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

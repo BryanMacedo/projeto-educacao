@@ -89,8 +89,11 @@ public class RegisterUserViewController implements Initializable {
             LoginAndPasswordMaker maker = new LoginAndPasswordMaker();
             maker.makerLoginAndPassword(firstName, lastName, dateOfBirth);
 
+            String login = maker.getLogin();
+            String password = maker.getPassword();
 
-            showAlertRegister("Novo usuário", "Novo usuário cadastrado!");
+            //showAlertRegister("Novo usuário", "Novo usuário cadastrado!");
+            showAlertRegister("Novo usuário cadastrado!", "Seu Login é: " + login + "\nE sua senha é: " + password);
 
             try{
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
