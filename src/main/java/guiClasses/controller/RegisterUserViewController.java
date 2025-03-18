@@ -1,5 +1,7 @@
 package guiClasses.controller;
 
+import db.DB;
+import db.Exception.DbException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,6 +14,10 @@ import model.entities.User;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class RegisterUserViewController implements Initializable {
@@ -57,6 +63,25 @@ public class RegisterUserViewController implements Initializable {
 
             User newUser = new User(userType, userName, dateOfBirth, sexUser);
             System.out.println(newUser);
+
+            Connection conn = null;
+            PreparedStatement st = null;
+
+            try {
+                conn = DB.getConnection();
+                st = conn.prepareStatement("INSERT INTO users (FullName, TypeUser, DateOfBirth, Gender) VALUES (?,?,?,?)");
+                st.setString(1, newUser.getUserName());
+                st.setString(2, newUser.getTypeUser());
+                st.setString(3, newUser.getDateOfBirth());
+                st.setString(4, newUser.getSexUser());
+                st.executeUpdate();
+
+            } catch (SQLException e) {
+                throw new DbException(e.getMessage());
+            }finally {
+                DB.closeStatement(st);
+            }
+
 
             showAlertRegister("Novo usuário", "Novo usuário cadastrado!");
 

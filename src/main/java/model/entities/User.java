@@ -3,13 +3,13 @@ package model.entities;
 public class User {
     private String typeUser;
     private String userName;
-    private String DateOfBirth;
+    private String dateOfBirth;
     private String sexUser;
 
     public User(String typeUser, String userName, String dateOfBirth, String sexUser) {
         this.typeUser = typeUser;
         this.userName = userName;
-        DateOfBirth = dateOfBirth;
+        this.dateOfBirth = dateOfBirth;
         this.sexUser = sexUser;
     }
 
@@ -18,7 +18,7 @@ public class User {
         return "User{" +
                 "typeUser='" + typeUser + '\'' +
                 ", userName='" + userName + '\'' +
-                ", DateOfBirth='" + DateOfBirth + '\'' +
+                ", DateOfBirth='" + dateOfBirth + '\'' +
                 ", sexUser='" + sexUser + '\'' +
                 '}';
     }
@@ -32,7 +32,7 @@ public class User {
     }
 
     public String getDateOfBirth() {
-        return DateOfBirth;
+        return dateOfBirth;
     }
 
     public String getSexUser() {
