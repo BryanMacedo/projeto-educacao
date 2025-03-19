@@ -20,7 +20,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <TextField focusTraversable="false">
+                  <TextField fx:id="tfLogin" focusTraversable="false">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
@@ -37,7 +37,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <TextField focusTraversable="false">
+                  <TextField fx:id="tfPassword" focusTraversable="false">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin></TextField>
