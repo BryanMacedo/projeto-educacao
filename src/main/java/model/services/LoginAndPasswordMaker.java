@@ -20,12 +20,11 @@ public class LoginAndPasswordMaker {
         int userId = 0;
         try {
             conn = DB.getConnection();
-            st = conn.prepareStatement("SELECT Id FROM users WHERE FirstName = ? ");
-            st.setString(1, firstName);
+            st = conn.prepareStatement("SELECT LAST_INSERT_ID()");
             rs = st.executeQuery();
-
-            if (rs.next()) {
-                userId = rs.getInt("Id");
+            userId = 0;
+            if (rs.next()){
+                userId = rs.getInt(1);
             }
             String earlyLastName = lastName.substring(0, 2);
             login = firstName + earlyLastName + userId;

@@ -96,13 +96,18 @@ public class RegisterUserViewController implements Initializable {
 
             String passwordHash = BCrypt.hashpw(password, BCrypt.gensalt());
 
-            try {
+            try{
                 conn = DB.getConnection();
-                //UPDATE tabela SET coluna1 = valor1, coluna2 = valor2 WHERE condição;
-                st = conn.prepareStatement("UPDATE users SET Login = ?, Password = ? WHERE FirstName = ? ");
-                st.setString(1, login);
-                st.setString(2, passwordHash);
-                st.setString(3, newUser.getFirstName());
+                st = conn.prepareStatement("SELECT LAST_INSERT_ID()");
+                rs = st.executeQuery();
+                int idLastUser = 0;
+                if (rs.next()){
+                    idLastUser = rs.getInt(1);
+                }
+                st = conn.prepareStatement("UPDATE users SET Login = ?, Password = ? WHERE Id = ? ");
+                st.setString(1,login);
+                st.setString(2,passwordHash);
+                st.setInt(3,idLastUser);
                 st.executeUpdate();
             } catch (SQLException e) {
                 throw new DbException(e.getMessage());
