@@ -89,6 +89,9 @@ public class LoginUserViewController implements Initializable {
 
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
+        }finally {
+            DB.closeStatement(st);
+            DB.closeResultSet(rs);
         }
 
     }

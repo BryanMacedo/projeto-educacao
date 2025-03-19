@@ -111,6 +111,9 @@ public class RegisterUserViewController implements Initializable {
                 st.executeUpdate();
             } catch (SQLException e) {
                 throw new DbException(e.getMessage());
+            }finally {
+                DB.closeStatement(st);
+                DB.closeResultSet(rs);
             }
 
             try {
@@ -150,6 +153,9 @@ public class RegisterUserViewController implements Initializable {
                 }
             } catch (SQLException e) {
                 throw new DbException(e.getMessage());
+            }finally {
+                DB.closeStatement(st);
+                DB.closeResultSet(rs);
             }
 
             showAlertRegister("Novo usuário cadastrado!", "Seu Login é: " + login + "\nE sua senha é: " + password);

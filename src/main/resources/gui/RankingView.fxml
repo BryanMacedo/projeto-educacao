@@ -19,52 +19,52 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label text="1 - NOME_ALUNO - 506 PTS">
+            <Label fx:id="labelScore01" text="1 - NOME_ALUNO - 506 PTS">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
             </Label>
-            <Label text="2 - NOME_ALUNO - 498 PTS">
+            <Label fx:id="labelScore02" text="2 - NOME_ALUNO - 498 PTS">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </Label>
-            <Label text="3 - NOME_ALUNO - 496 PTS">
+            <Label fx:id="labelScore03" text="3 - NOME_ALUNO - 496 PTS">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </Label>
-            <Label text="4 - NOME_ALUNO - 488 PTS">
+            <Label fx:id="labelScore04" text="4 - NOME_ALUNO - 488 PTS">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </Label>
-            <Label text="5 - NOME_ALUNO - 480 PTS">
+            <Label fx:id="labelScore05" text="5 - NOME_ALUNO - 480 PTS">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </Label>
-            <Label text="6 - NOME_ALUNO - 462 PTS">
+            <Label fx:id="labelScore06" text="6 - NOME_ALUNO - 462 PTS">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </Label>
-            <Label text="7 - NOME_ALUNO - 420 PTS">
+            <Label fx:id="labelScore07" text="7 - NOME_ALUNO - 420 PTS">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </Label>
-            <Label text="8 - NOME_ALUNO - 419 PTS">
+            <Label fx:id="labelScore08" text="8 - NOME_ALUNO - 419 PTS">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </Label>
-            <Label text="9 - NOME_ALUNO - 358 PTS">
+            <Label fx:id="labelScore09" text="9 - NOME_ALUNO - 358 PTS">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </Label>
-            <Label text="10 - NOME_ALUNO - 357 PTS">
+            <Label fx:id="labelScore010" text="10 - NOME_ALUNO - 357 PTS">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
