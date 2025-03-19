@@ -54,17 +54,17 @@ public class RegisterUserViewController implements Initializable {
     private Button btRegisterUser;
 
     @FXML
-    private void onBtRegisterUserAction(){
-        if (toggleGroupUsers.getSelectedToggle() == null || tfFirstName.getText().isEmpty() || tfLastName.getText().isEmpty() || dpDateOfBirth.getValue() == null || toggleGroupSex.getSelectedToggle() == null){
+    private void onBtRegisterUserAction() {
+        if (toggleGroupUsers.getSelectedToggle() == null || tfFirstName.getText().isEmpty() || tfLastName.getText().isEmpty() || dpDateOfBirth.getValue() == null || toggleGroupSex.getSelectedToggle() == null) {
             showAlertError("Campos não preenchidos.", "Por favor preencha todos os campos do formulário.");
-        }else {
+        } else {
             String userType = rbStudent.isSelected() ? "Aluno" : "Professor";
             String firstName = tfFirstName.getText();
             String lastName = tfLastName.getText();
             String dateOfBirth = dpDateOfBirth.getValue().toString();
             String sexUser = rbBoy.isSelected() ? "Menino" : "Menina";
 
-            User newUser = new User(userType,firstName,lastName,dateOfBirth,sexUser);
+            User newUser = new User(userType, firstName, lastName, dateOfBirth, sexUser);
             System.out.println(newUser);
 
             Connection conn = null;
@@ -83,7 +83,7 @@ public class RegisterUserViewController implements Initializable {
 
             } catch (SQLException e) {
                 throw new DbException(e.getMessage());
-            }finally {
+            } finally {
                 DB.closeStatement(st);
             }
 
@@ -96,26 +96,65 @@ public class RegisterUserViewController implements Initializable {
 
             String passwordHash = BCrypt.hashpw(password, BCrypt.gensalt());
 
-            try{
+            try {
                 conn = DB.getConnection();
                 st = conn.prepareStatement("SELECT LAST_INSERT_ID()");
                 rs = st.executeQuery();
                 int idLastUser = 0;
-                if (rs.next()){
+                if (rs.next()) {
                     idLastUser = rs.getInt(1);
                 }
                 st = conn.prepareStatement("UPDATE users SET Login = ?, Password = ? WHERE Id = ? ");
-                st.setString(1,login);
-                st.setString(2,passwordHash);
-                st.setInt(3,idLastUser);
+                st.setString(1, login);
+                st.setString(2, passwordHash);
+                st.setInt(3, idLastUser);
                 st.executeUpdate();
+            } catch (SQLException e) {
+                throw new DbException(e.getMessage());
+            }
+
+            try {
+                conn = DB.getConnection();
+                st = conn.prepareStatement("SELECT LAST_INSERT_ID()");
+                rs = st.executeQuery();
+
+                int lastUserId = -1;
+                if (rs.next()) {
+                    lastUserId = rs.getInt(1);
+
+                }
+
+                st = conn.prepareStatement("SELECT * FROM users WHERE Id = ?");
+                st.setInt(1, lastUserId);
+                rs =st.executeQuery();
+
+                if (rs.next()){
+                    String lastUserFN = rs.getString("FirstName");
+                    String lastUserLN = rs.getString("LastName");
+                    String lastUserLogin = rs.getString("Login");
+                    String lastUserGender = rs.getString("Gender");
+                    String lastUserTU = rs.getString("TypeUser");
+                    int scoring = 0; // passar 0 no primeiro momento e atualizar depois
+
+                    st = conn.prepareStatement("INSERT INTO scoring (User_Id, FirstName, LastName, Login, Gender, TypeUser, Scoring) VALUES(?,?,?,?,?,?,?)");
+                    st.setInt(1,lastUserId);
+                    st.setString(2, lastUserFN);
+                    st.setString(3, lastUserLN);
+                    st.setString(4, lastUserLogin);
+                    st.setString(5, lastUserGender);
+                    st.setString(6, lastUserTU);
+                    st.setInt(7, scoring);
+                    st.executeUpdate();
+                }else {
+                    System.out.println("Usuário com o Id: " + lastUserId + " não encontrado.");
+                }
             } catch (SQLException e) {
                 throw new DbException(e.getMessage());
             }
 
             showAlertRegister("Novo usuário cadastrado!", "Seu Login é: " + login + "\nE sua senha é: " + password);
 
-            try{
+            try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
                 Parent root = loader.load();
 
@@ -126,12 +165,12 @@ public class RegisterUserViewController implements Initializable {
             }
         }
 
-    };
+    }
 
 
     @FXML
     private void onBtBackArrowAction() {
-        try{
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
             Parent root = loader.load();
 
