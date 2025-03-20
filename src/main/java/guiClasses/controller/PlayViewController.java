@@ -25,6 +25,7 @@ import java.util.*;
 public class PlayViewController implements Initializable {
     private List<Map.Entry<String, String>> randomWords;
     private int points;
+    private String userLogin;
 
     @FXML
     private Button btBackArrow;
@@ -58,6 +59,34 @@ public class PlayViewController implements Initializable {
             } else {
                 showAlertCongratulation("Resposta Incorreta", "A resposta correta é: " + rightAnswer);
 
+                // verificar se os pontos são maiores doq os da tabela scoring se for atualizar
+                Connection conn = null;
+                PreparedStatement st = null;
+                ResultSet rs = null;
+
+                try {
+                    conn = DB.getConnection();
+                    st = conn.prepareStatement("SELECT * FROM scoring WHERE Login = ?");
+                    st.setString(1, userLogin);
+                    rs = st.executeQuery();
+
+                    int scoring = 0;
+                    if (rs.next()) {
+                        scoring = rs.getInt("Scoring");
+                    }
+
+                    if (this.points > scoring) {
+                        st = conn.prepareStatement("UPDATE scoring SET Scoring = ? WHERE Login = ?");
+                        st.setInt(1, points);
+                        st.setString(2, userLogin);
+                        st.executeUpdate();
+                    }
+
+                } catch (SQLException e) {
+                    throw new DbException(e.getMessage());
+                }
+
+
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
                     Parent root = loader.load();
@@ -78,6 +107,7 @@ public class PlayViewController implements Initializable {
         } else {
             showAlertCongratulation("PARABÉNS", "VOCÊ ACERTOU TODAS AS PALAVRAS!");
             labelFullWord.setText("Fim do jogo!");
+            // verificar se os pontos são maiores doq os da tabela scoring se for atualizar
         }
 
 
@@ -154,5 +184,9 @@ public class PlayViewController implements Initializable {
 
         btBackArrow.setGraphic(backArrowIconImageView);
 
+    }
+
+    public void setUserLogin(String userLogin) {
+        this.userLogin = userLogin;
     }
 }

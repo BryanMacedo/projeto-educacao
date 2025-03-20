@@ -75,6 +75,11 @@ public class LoginUserViewController implements Initializable {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/PlayView.fxml"));
                         Parent root = loader.load();
 
+                        PlayViewController playViewController = loader.getController();
+                        // criando um obj da playcontroller para poder acessar o nome do login do usuário
+
+                        playViewController.setUserLogin(loginWritten);
+
                         Scene scene = btEnter.getScene();
                         scene.setRoot(root);
                     } catch (IOException e) {
