@@ -7,20 +7,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiClasses.controller.PlayViewController">
    <children>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0">
          <children>
-            <Label text="PALAVRA: EXEMPLO">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
+            <HBox alignment="CENTER" prefHeight="10.0" prefWidth="600.0">
+               <children>
+                  <Label text="PALAVRA: " />
+                  <Label fx:id="labelFullWord">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
             <HBox alignment="CENTER" prefHeight="13.0" prefWidth="600.0">
                <children>
-                  <TextField focusTraversable="false" promptText="E-XEM-PLO" />
+                  <TextField fx:id="tfAnswerWrite" focusTraversable="false" promptText="E-XEM-PLO" />
                </children>
                <VBox.margin>
                   <Insets top="10.0" />
@@ -28,7 +32,7 @@
             </HBox>
             <VBox alignment="CENTER" prefHeight="45.0" prefWidth="600.0">
                <children>
-                  <Button mnemonicParsing="false" text="RESPONDER" />
+                  <Button fx:id="btAnswer" mnemonicParsing="false" onAction="#onBtAnswerAction" text="RESPONDER" />
                </children>
             </VBox>
          </children></VBox>
