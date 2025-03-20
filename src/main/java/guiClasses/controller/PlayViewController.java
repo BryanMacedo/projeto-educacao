@@ -24,12 +24,16 @@ import java.util.*;
 
 public class PlayViewController implements Initializable {
     private List<Map.Entry<String, String>> randomWords;
+    private int points;
 
     @FXML
     private Button btBackArrow;
 
     @FXML
     private Label labelFullWord;
+
+    @FXML
+    private Label labelShowPoints;
 
     @FXML
     private TextField tfAnswerWrite;
@@ -48,6 +52,8 @@ public class PlayViewController implements Initializable {
 
             if (userAnswer.equalsIgnoreCase(rightAnswer)) {
                 showAlertCongratulation("Resposta Correta", "Parabéns! Você acertou!");
+                points += 5;
+                labelShowPoints.setText(points + " PTS");
                 tfAnswerWrite.clear();
             } else {
                 showAlertCongratulation("Resposta Incorreta", "A resposta correta é: " + rightAnswer);
