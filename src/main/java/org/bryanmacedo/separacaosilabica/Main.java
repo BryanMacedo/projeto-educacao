@@ -24,6 +24,7 @@ public class Main extends Application {
             mainScene.getStylesheets().add(getClass().getResource("/styles/background.css").toExternalForm());
 
             primaryStage.setScene(mainScene);
+            //primaryStage.setFullScreen(true);
             primaryStage.setTitle("Separação silábica");
 
             Image icon = new Image(getClass().getResourceAsStream("/imgs/icons/LogoV2.png"));

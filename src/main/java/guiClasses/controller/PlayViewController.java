@@ -107,7 +107,31 @@ public class PlayViewController implements Initializable {
         } else {
             showAlertCongratulation("PARABÉNS", "VOCÊ ACERTOU TODAS AS PALAVRAS!");
             labelFullWord.setText("Fim do jogo!");
-            // verificar se os pontos são maiores doq os da tabela scoring se for atualizar
+            Connection conn = null;
+            PreparedStatement st = null;
+            ResultSet rs = null;
+
+            try {
+                conn = DB.getConnection();
+                st = conn.prepareStatement("SELECT * FROM scoring WHERE Login = ?");
+                st.setString(1, userLogin);
+                rs = st.executeQuery();
+
+                int scoring = 0;
+                if (rs.next()) {
+                    scoring = rs.getInt("Scoring");
+                }
+
+                if (this.points > scoring) {
+                    st = conn.prepareStatement("UPDATE scoring SET Scoring = ? WHERE Login = ?");
+                    st.setInt(1, points);
+                    st.setString(2, userLogin);
+                    st.executeUpdate();
+                }
+
+            } catch (SQLException e) {
+                throw new DbException(e.getMessage());
+            }
         }
 
 
