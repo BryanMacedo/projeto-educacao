@@ -69,8 +69,8 @@ public class LoginUserViewController implements Initializable {
 
             if (rs.next()){
                 String passwordFromDB = rs.getString("Password");
-                //if (BCrypt.checkpw(passwordWritten, passwordFromDB)){
-                if (passwordWritten.equals(passwordFromDB)){
+                if (BCrypt.checkpw(passwordWritten, passwordFromDB)){
+                //if (passwordWritten.equals(passwordFromDB)){
                     try{
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/PlayView.fxml"));
                         Parent root = loader.load();

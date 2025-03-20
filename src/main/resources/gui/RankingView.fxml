@@ -9,9 +9,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiClasses.controller.RankingViewController">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0">
          <children>
-            <Label text="RANKING DE ALUNOS">
+            <Label text="RANKING DE ALUNOS" textFill="WHITE">
                <VBox.margin>
                   <Insets top="60.0" />
                </VBox.margin>
@@ -19,55 +19,85 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="labelScore01" text="1 - NOME_ALUNO - 506 PTS">
+            <Label fx:id="labelScore01" text="1 - NOME_ALUNO - 506 PTS" textFill="WHITE">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Label>
-            <Label fx:id="labelScore02" text="2 - NOME_ALUNO - 498 PTS">
+            <Label fx:id="labelScore02" text="2 - NOME_ALUNO - 498 PTS" textFill="WHITE">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Label>
-            <Label fx:id="labelScore03" text="3 - NOME_ALUNO - 496 PTS">
+            <Label fx:id="labelScore03" text="3 - NOME_ALUNO - 496 PTS" textFill="WHITE">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Label>
-            <Label fx:id="labelScore04" text="4 - NOME_ALUNO - 488 PTS">
+            <Label fx:id="labelScore04" text="4 - NOME_ALUNO - 488 PTS" textFill="WHITE">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Label>
-            <Label fx:id="labelScore05" text="5 - NOME_ALUNO - 480 PTS">
+            <Label fx:id="labelScore05" text="5 - NOME_ALUNO - 480 PTS" textFill="WHITE">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Label>
-            <Label fx:id="labelScore06" text="6 - NOME_ALUNO - 462 PTS">
+            <Label fx:id="labelScore06" text="6 - NOME_ALUNO - 462 PTS" textFill="WHITE">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Label>
-            <Label fx:id="labelScore07" text="7 - NOME_ALUNO - 420 PTS">
+            <Label fx:id="labelScore07" text="7 - NOME_ALUNO - 420 PTS" textFill="WHITE">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Label>
-            <Label fx:id="labelScore08" text="8 - NOME_ALUNO - 419 PTS">
+            <Label fx:id="labelScore08" text="8 - NOME_ALUNO - 419 PTS" textFill="WHITE">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Label>
-            <Label fx:id="labelScore09" text="9 - NOME_ALUNO - 358 PTS">
+            <Label fx:id="labelScore09" text="9 - NOME_ALUNO - 358 PTS" textFill="WHITE">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Label>
-            <Label fx:id="labelScore010" text="10 - NOME_ALUNO - 357 PTS">
+            <Label fx:id="labelScore010" text="10 - NOME_ALUNO - 357 PTS" textFill="WHITE">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Label>
          </children></VBox>
       <VBox prefHeight="200.0" prefWidth="100.0">

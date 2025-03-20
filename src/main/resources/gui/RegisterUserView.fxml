@@ -20,7 +20,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="23.0" prefWidth="600.0">
                      <children>
-                        <Label text="TIPO DE USUÁRIO">
+                        <Label text="TIPO DE USUÁRIO" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -28,7 +28,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <RadioButton fx:id="rbStudent" mnemonicParsing="false" text="ALUNO">
+                        <RadioButton fx:id="rbStudent" mnemonicParsing="false" text="ALUNO" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="5.0" right="5.0" />
                            </HBox.margin>
@@ -39,7 +39,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton fx:id="rbTeacher" mnemonicParsing="false" text="PROFESSOR" toggleGroup="$toggleGroupUsers">
+                        <RadioButton fx:id="rbTeacher" mnemonicParsing="false" text="PROFESSOR" textFill="WHITE" toggleGroup="$toggleGroupUsers">
                            <HBox.margin>
                               <Insets left="5.0" right="5.0" />
                            </HBox.margin>
@@ -51,7 +51,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="42.0" prefWidth="600.0">
                      <children>
-                        <Label text="NOME">
+                        <Label text="NOME" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -68,7 +68,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="31.0" prefWidth="600.0">
                      <children>
-                        <Label text="SOBRENOME">
+                        <Label text="SOBRENOME" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -82,7 +82,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="38.0" prefWidth="600.0">
                      <children>
-                        <Label text="DATA DE NASCIMENTO">
+                        <Label text="DATA DE NASCIMENTO" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -99,7 +99,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="31.0" prefWidth="600.0">
                      <children>
-                        <Label text="SEXO">
+                        <Label text="SEXO" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -107,7 +107,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <RadioButton fx:id="rbBoy" mnemonicParsing="false" text="MENINO">
+                        <RadioButton fx:id="rbBoy" mnemonicParsing="false" text="MENINO" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin>
@@ -118,7 +118,7 @@
                               <ToggleGroup fx:id="toggleGroupSex" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="rbGirl" mnemonicParsing="false" text="MENINA" toggleGroup="$toggleGroupSex">
+                        <RadioButton fx:id="rbGirl" mnemonicParsing="false" text="MENINA" textFill="WHITE" toggleGroup="$toggleGroupSex">
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin>

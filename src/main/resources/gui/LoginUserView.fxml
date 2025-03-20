@@ -15,7 +15,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="28.0" prefWidth="600.0">
                <children>
-                  <Label text="LOGIN">
+                  <Label text="LOGIN" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -32,7 +32,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="27.0" prefWidth="600.0">
                <children>
-                  <Label alignment="CENTER" text="SENHA">
+                  <Label alignment="CENTER" text="SENHA" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

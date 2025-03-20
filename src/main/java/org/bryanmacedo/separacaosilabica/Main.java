@@ -26,7 +26,7 @@ public class Main extends Application {
             primaryStage.setScene(mainScene);
             primaryStage.setTitle("Separação silábica");
 
-            Image icon = new Image(getClass().getResourceAsStream("/imgs/icons/iconeTemporario.png"));
+            Image icon = new Image(getClass().getResourceAsStream("/imgs/icons/LogoV2.png"));
             primaryStage.getIcons().add(icon);
 
             primaryStage.show();
