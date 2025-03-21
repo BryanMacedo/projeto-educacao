@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
 <!--<StackPane xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1">-->
 <!--    &lt;!&ndash; Container central &ndash;&gt;-->
@@ -15,20 +22,129 @@
 <!--    </VBox>-->
 <!--</StackPane>-->
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
-<StackPane xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1">
-    <!-- Container central -->
-    <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20" style="-fx-background-color: linear-gradient(to bottom right, #FF4500, #FFA500); -fx-padding: 20px; -fx-background-radius: 10px; -fx-pref-width: 400px; -fx-pref-height: 400px;">
-        <!-- Ícone ou imagem -->
 
-        <!-- Título -->
-        <Label text="Bem-vindo ao Jogo!" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5, 0, 0, 1);" />
-
-        <!-- Botões -->
-        <Button mnemonicParsing="false" text="CADASTRAR ALUNO/PROFESSOR" styleClass="button" />
-        <Button mnemonicParsing="false" text="COMEÇAR A JOGAR" styleClass="button" />
-        <Button mnemonicParsing="false" text="RANKING" styleClass="button" />
-    </VBox>
-</StackPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="833.0" prefWidth="1300.0" styleClass="dark-background" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox prefHeight="125.0" prefWidth="200.0" spacing="20.0" styleClass="border-bottom" stylesheets="@../styles/style.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="125.0" prefWidth="127.0" spacing="20.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imgs/icons/ic_menu.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="37.0" prefWidth="61.0" text="Menu" textFill="#676767">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Pane prefHeight="125.0" prefWidth="137.0" HBox.hgrow="ALWAYS" />
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/icons/ic_traveler.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="74.0" text="Traveling" textFill="#1c90e4">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/icons/ic_explore.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="74.0" text="Explore" textFill="#676767">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imgs/icons/ic_save.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="74.0" text="Saved" textFill="#676767">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imgs/icons/ic_chat.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="74.0" text="Chat" textFill="#676767">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imgs/icons/ic_profile.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="74.0" text="Profile" textFill="#676767">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Pane prefHeight="125.0" prefWidth="160.0" HBox.hgrow="ALWAYS" />
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="48.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imgs/icons/ic_bell.png" />
+                     </image>
+                  </ImageView>
+                  <Circle fill="DODGERBLUE" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="26.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imgs/icons/ic_search.png" />
+                     </image>
+                  </ImageView>
+                  <Circle fill="#222222" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="23.0" right="30.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+</BorderPane>

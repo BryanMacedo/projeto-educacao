@@ -24,7 +24,7 @@
                   <Insets top="20.0" />
                </VBox.margin>
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label fx:id="labelScore02" text="2 - NOME_ALUNO - 498 PTS" textFill="WHITE">
@@ -32,7 +32,7 @@
                   <Insets top="5.0" />
                </VBox.margin>
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label fx:id="labelScore03" text="3 - NOME_ALUNO - 496 PTS" textFill="WHITE">
@@ -40,7 +40,7 @@
                   <Insets top="5.0" />
                </VBox.margin>
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label fx:id="labelScore04" text="4 - NOME_ALUNO - 488 PTS" textFill="WHITE">
@@ -48,7 +48,7 @@
                   <Insets top="5.0" />
                </VBox.margin>
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label fx:id="labelScore05" text="5 - NOME_ALUNO - 480 PTS" textFill="WHITE">
@@ -56,7 +56,7 @@
                   <Insets top="5.0" />
                </VBox.margin>
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label fx:id="labelScore06" text="6 - NOME_ALUNO - 462 PTS" textFill="WHITE">
@@ -64,7 +64,7 @@
                   <Insets top="5.0" />
                </VBox.margin>
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label fx:id="labelScore07" text="7 - NOME_ALUNO - 420 PTS" textFill="WHITE">
@@ -72,7 +72,7 @@
                   <Insets top="5.0" />
                </VBox.margin>
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label fx:id="labelScore08" text="8 - NOME_ALUNO - 419 PTS" textFill="WHITE">
@@ -80,7 +80,7 @@
                   <Insets top="5.0" />
                </VBox.margin>
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label fx:id="labelScore09" text="9 - NOME_ALUNO - 358 PTS" textFill="WHITE">
@@ -88,7 +88,7 @@
                   <Insets top="5.0" />
                </VBox.margin>
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label fx:id="labelScore010" text="10 - NOME_ALUNO - 357 PTS" textFill="WHITE">
@@ -96,7 +96,7 @@
                   <Insets top="5.0" />
                </VBox.margin>
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
          </children></VBox>
