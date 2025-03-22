@@ -41,6 +41,7 @@ public class TestNewMainViewController implements Initializable {
 
         labelWordToComplete.setText(newTextLabel);
 
+        VerifyWord();
     }
 
     @FXML
@@ -51,8 +52,10 @@ public class TestNewMainViewController implements Initializable {
         String newTextLabel = textLabelWordToComplete.replaceFirst("_", buttonLetter);
 
         labelWordToComplete.setText(newTextLabel);
+        VerifyWord();
+    }
 
-    }@FXML
+    @FXML
     private void onBtLetterI_Action(){
         String buttonLetter = "I";
         String textLabelWordToComplete = labelWordToComplete.getText();
@@ -60,8 +63,11 @@ public class TestNewMainViewController implements Initializable {
         String newTextLabel = textLabelWordToComplete.replaceFirst("_", buttonLetter);
 
         labelWordToComplete.setText(newTextLabel);
+        VerifyWord();
 
-    }@FXML
+    }
+
+    @FXML
     private void onBtLetterO_Action(){
         String buttonLetter = "O";
         String textLabelWordToComplete = labelWordToComplete.getText();
@@ -69,6 +75,7 @@ public class TestNewMainViewController implements Initializable {
         String newTextLabel = textLabelWordToComplete.replaceFirst("_", buttonLetter);
 
         labelWordToComplete.setText(newTextLabel);
+        VerifyWord();
     }
 
     @FXML
@@ -79,7 +86,16 @@ public class TestNewMainViewController implements Initializable {
         String newTextLabel = textLabelWordToComplete.replaceFirst("_", buttonLetter);
 
         labelWordToComplete.setText(newTextLabel);
+        VerifyWord();
+    }
 
+    private void VerifyWord(){
+        String textLabelWordToComplete = labelWordToComplete.getText();
+        if (!textLabelWordToComplete.contains("_") && textLabelWordToComplete.equals("CASA")){
+            labelWordToComplete.setStyle("-fx-text-fill: green;");
+        } else if (!textLabelWordToComplete.contains("_") && !textLabelWordToComplete.equals("CASA")) {
+            labelWordToComplete.setStyle("-fx-text-fill: red;");
+        }
     }
 
     @Override
