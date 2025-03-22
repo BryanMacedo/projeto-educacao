@@ -84,12 +84,8 @@
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../imgs/icons/house_test.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="labelWordToComplete" text="C_S_" textFill="WHITE">
+                  <ImageView fx:id="MainImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="labelWordToComplete" textFill="WHITE">
                      <font>
                         <Font size="72.0" />
                      </font>
