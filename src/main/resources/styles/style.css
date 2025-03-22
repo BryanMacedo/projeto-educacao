@@ -17,3 +17,22 @@
     -fx-scale-x: 1.1;
     -fx-scale-y: 1.1;
 }
+
+.round-button {
+    -fx-background-radius: 50%; /* Deixa o botão redondo */
+    -fx-min-width: 50px; /* Largura mínima */
+    -fx-min-height: 50px; /* Altura mínima */
+    -fx-max-width: 50px; /* Largura máxima */
+    -fx-max-height: 50px; /* Altura máxima */
+    -fx-background-color: transparent; /* Cor de fundo */
+    -fx-text-fill: white; /* Cor do texto */
+    -fx-font-size: 18px; /* Tamanho da fonte */
+    -fx-font-weight: bold; /* Fonte em negrito */
+    -fx-cursor: hand;
+}
+
+.round-button:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-background-color: #676767;
+}
