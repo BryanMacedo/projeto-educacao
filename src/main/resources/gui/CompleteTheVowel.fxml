@@ -15,58 +15,72 @@
    <top>
       <HBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="200.0" spacing="20.0" styleClass="border-bottom" stylesheets="@../styles/style.css" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="123.0" prefWidth="132.0">
+            <VBox alignment="CENTER" prefHeight="123.0" prefWidth="0.0">
                <children>
-                  <VBox alignment="CENTER" prefHeight="123.0" prefWidth="120.0">
-                     <children>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../imgs/img/ic_Words.png" />
-                           </image>
-                           <styleClass>
-                              <String fx:value="cursor-image" />
-                              <String fx:value="imageHover" />
-                           </styleClass>
-                        </ImageView>
-                        <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="123.0" text="Complete as palavras" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="123.0" prefWidth="76.0">
-               <children>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgvHomeImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvHomeImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgs/img/ic_Math.png" />
+                        <Image url="@../imgs/img/ic_Home_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
                         <String fx:value="imageHover" />
                      </styleClass>
                   </ImageView>
-                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="76.0" text="Mátematica" textFill="WHITE">
+                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="123.0" text="Inicio" textFill="#676767">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="123.0" prefWidth="65.0">
+            <VBox alignment="CENTER" prefHeight="123.0" prefWidth="26.0">
                <children>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgs/img/img_geography.png" />
+                        <Image url="@../imgs/img/ic_Words_in.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
                         <String fx:value="imageHover" />
                      </styleClass>
                   </ImageView>
-                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="63.0" text="Geografia" textFill="WHITE">
+                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="123.0" text="Vogais" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="123.0" prefWidth="68.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imgs/img/img_Math_out.png" />
+                     </image>
+                     <styleClass>
+                        <String fx:value="cursor-image" />
+                        <String fx:value="imageHover" />
+                     </styleClass>
+                  </ImageView>
+                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="76.0" text="Mátematica" textFill="#676767">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="123.0" prefWidth="57.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imgs/img/img_geography_out.png" />
+                     </image>
+                     <styleClass>
+                        <String fx:value="cursor-image" />
+                        <String fx:value="imageHover" />
+                     </styleClass>
+                  </ImageView>
+                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="63.0" text="Geografia" textFill="#676767">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>

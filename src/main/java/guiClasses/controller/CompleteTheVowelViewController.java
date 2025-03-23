@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import model.entities.Word;
 
@@ -28,6 +29,9 @@ import java.util.ResourceBundle;
 
 public class CompleteTheVowelViewController implements Initializable {
     List<Word> words = new ArrayList<>();
+
+    @FXML
+    private ImageView imgvHomeImg;
 
     @FXML
     private ImageView MainImage;
@@ -49,6 +53,18 @@ public class CompleteTheVowelViewController implements Initializable {
 
     @FXML
     private Button btLetterU;
+
+    @FXML
+    private void onImgvHomeImgClick(MouseEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
+            Parent root = loader.load();
+            Scene scene = imgvHomeImg.getScene();
+            scene.setRoot(root);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     @FXML
     private void onBtLetterA_Action() {

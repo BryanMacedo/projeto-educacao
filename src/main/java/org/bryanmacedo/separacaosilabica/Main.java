@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/CompleteTheVowel.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/MainView.fxml"));
         primaryStage.setTitle("Educação");
         primaryStage.setScene(new Scene(root, 1445, 833));
         primaryStage.show();
