@@ -22,7 +22,7 @@ public class CongratulationViewController implements Initializable {
     @FXML
     private void onBtPlayAgainAction(){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/TestNewMainView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/CompleteTheVowel.fxml"));
             Parent root = loader.load();
             Scene scene = labelCongratulation.getScene();
             scene.setRoot(root);

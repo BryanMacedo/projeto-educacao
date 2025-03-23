@@ -12,9 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 import model.entities.Word;
 
@@ -29,7 +26,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class TestNewMainViewController implements Initializable {
+public class CompleteTheVowelViewController implements Initializable {
     List<Word> words = new ArrayList<>();
 
     @FXML
@@ -113,7 +110,7 @@ public class TestNewMainViewController implements Initializable {
     private void VerifyWord() {
         String textLabelWordToComplete = labelWordToComplete.getText();
         if (!textLabelWordToComplete.contains("_") && textLabelWordToComplete.equals(words.get(0).getFullWords())) {
-            labelWordToComplete.setStyle("-fx-text-fill: green;");
+            labelWordToComplete.setStyle("-fx-text-fill: #FFD700;");
             PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
             pause.setOnFinished(event -> {
                 words.remove(0);
@@ -123,7 +120,7 @@ public class TestNewMainViewController implements Initializable {
             pause.play();
 
         } else if (!textLabelWordToComplete.contains("_") && !textLabelWordToComplete.equals(words.get(0).getFullWords())) {
-            labelWordToComplete.setStyle("-fx-text-fill: red;");
+            labelWordToComplete.setStyle("-fx-text-fill: #B22222;");
             PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
             pause.setOnFinished(event -> {
                 labelWordToComplete.setText(words.get(0).getWordWith_());
