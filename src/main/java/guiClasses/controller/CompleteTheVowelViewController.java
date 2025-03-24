@@ -68,56 +68,33 @@ public class CompleteTheVowelViewController implements Initializable {
 
     @FXML
     private void onBtLetterA_Action() {
-        String buttonLetter = "A";
-        String textLabelWordToComplete = labelWordToComplete.getText();
-
-        String newTextLabel = textLabelWordToComplete.replaceFirst("_", buttonLetter);
-
-        labelWordToComplete.setText(newTextLabel);
-
-        VerifyWord();
+        writeVowelInTheLabel("A");
     }
 
     @FXML
     private void onBtLetterE_Action() {
-        String buttonLetter = "E";
-        String textLabelWordToComplete = labelWordToComplete.getText();
-
-        String newTextLabel = textLabelWordToComplete.replaceFirst("_", buttonLetter);
-
-        labelWordToComplete.setText(newTextLabel);
-        VerifyWord();
+        writeVowelInTheLabel("E");
     }
 
     @FXML
     private void onBtLetterI_Action() {
-        String buttonLetter = "I";
-        String textLabelWordToComplete = labelWordToComplete.getText();
-
-        String newTextLabel = textLabelWordToComplete.replaceFirst("_", buttonLetter);
-
-        labelWordToComplete.setText(newTextLabel);
-        VerifyWord();
-
+        writeVowelInTheLabel("I");
     }
 
     @FXML
     private void onBtLetterO_Action() {
-        String buttonLetter = "O";
-        String textLabelWordToComplete = labelWordToComplete.getText();
-
-        String newTextLabel = textLabelWordToComplete.replaceFirst("_", buttonLetter);
-
-        labelWordToComplete.setText(newTextLabel);
-        VerifyWord();
+        writeVowelInTheLabel("O");
     }
 
     @FXML
     private void onBtLetterU_Action() {
-        String buttonLetter = "U";
+        writeVowelInTheLabel("U");
+    }
+
+    private void writeVowelInTheLabel(String vowel){
         String textLabelWordToComplete = labelWordToComplete.getText();
 
-        String newTextLabel = textLabelWordToComplete.replaceFirst("_", buttonLetter);
+        String newTextLabel = textLabelWordToComplete.replaceFirst("_", vowel);
 
         labelWordToComplete.setText(newTextLabel);
         VerifyWord();
@@ -152,13 +129,6 @@ public class CompleteTheVowelViewController implements Initializable {
             Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + words.get(0).getImgName()));
             MainImage.setImage(newImage);
         } else {
-            MainImage.setVisible(false);
-            btLetterA.setVisible(false);
-            btLetterE.setVisible(false);
-            btLetterI.setVisible(false);
-            btLetterO.setVisible(false);
-            btLetterU.setVisible(false);
-
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/CongratulationView.fxml"));
                 Parent root = loader.load();
@@ -172,7 +142,6 @@ public class CompleteTheVowelViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // trasformar essa consulta em um método, chamar ela uma vez aqui e outra no botão play again(criar esse botão)
         Connection conn = null;
         PreparedStatement st = null;
         ResultSet rs = null;
@@ -191,6 +160,9 @@ public class CompleteTheVowelViewController implements Initializable {
 
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
+        }finally {
+            DB.closeStatement(st);
+            DB.closeResultSet(rs);
         }
 
         if (!words.isEmpty()) {
