@@ -34,6 +34,9 @@ public class CompleteTheVowelViewController implements Initializable {
     private ImageView imgvHomeImg;
 
     @FXML
+    private ImageView imgvDiceImg;
+
+    @FXML
     private ImageView MainImage;
 
     @FXML
@@ -53,6 +56,18 @@ public class CompleteTheVowelViewController implements Initializable {
 
     @FXML
     private Button btLetterU;
+
+    @FXML
+    private void onImgvDiceImgClick(MouseEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MemoryView.fxml"));
+            Parent root = loader.load();
+            Scene scene = imgvDiceImg.getScene();
+            scene.setRoot(root);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     @FXML
     private void onImgvHomeImgClick(MouseEvent event){
@@ -92,9 +107,9 @@ public class CompleteTheVowelViewController implements Initializable {
     }
 
     private void writeVowelInTheLabel(String vowel){
-        String textLabelWordToComplete = labelWordToComplete.getText();
+        String newTextLabel = labelWordToComplete.getText();
 
-        String newTextLabel = textLabelWordToComplete.replaceFirst("_", vowel);
+        newTextLabel = newTextLabel.replaceFirst("_", vowel);
 
         labelWordToComplete.setText(newTextLabel);
         VerifyWord();

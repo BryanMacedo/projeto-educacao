@@ -12,12 +12,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainViewController implements Initializable {
+public class MemoryViewController implements Initializable {
     @FXML
-    private ImageView imgvVowelImg;
+    private ImageView imgvHomeImg;
 
     @FXML
-    private ImageView imgvDiceImg;
+    private ImageView imgvVowelImg;
 
     @FXML
     private void onImgvVowelImgClick(MouseEvent event){
@@ -32,11 +32,11 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
-    private void onImgvDiceImgClick(MouseEvent event){
+    private void onImgvHomeImgClick(MouseEvent event){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MemoryView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
             Parent root = loader.load();
-            Scene scene = imgvDiceImg.getScene();
+            Scene scene = imgvHomeImg.getScene();
             scene.setRoot(root);
         } catch (IOException e) {
             System.out.println(e.getMessage());
