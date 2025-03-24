@@ -18,6 +18,10 @@
     -fx-scale-y: 1.1;
 }
 
+.imageDice{
+    -fx-cursor: hand;
+}
+
 .round-button {
     -fx-background-radius: 50%; /* Deixa o botão redondo */
     -fx-min-width: 50px; /* Largura mínima */
