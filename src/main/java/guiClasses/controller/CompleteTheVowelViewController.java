@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import model.entities.Word;
+import model.services.DiceInfos;
 
 import java.io.IOException;
 import java.net.URL;
