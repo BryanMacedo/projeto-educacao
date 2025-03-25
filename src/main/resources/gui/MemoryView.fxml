@@ -104,31 +104,49 @@
                            <image>
                               <Image url="@../imgs/img/BackTest.png" />
                            </image>
+                           <HBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </HBox.margin>
                         </ImageView>
                         <ImageView fx:id="imgvDice2ImgLine1" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice2ImgLine1Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
                               <Image url="@../imgs/img/BackTest.png" />
                            </image>
+                           <HBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </HBox.margin>
                         </ImageView>
                         <ImageView fx:id="imgvDice3ImgLine1" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice3ImgLine1Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
                               <Image url="@../imgs/img/BackTest.png" />
                            </image>
+                           <HBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </HBox.margin>
                         </ImageView>
                         <ImageView fx:id="imgvDice4ImgLine1" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice4ImgLine1Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
                               <Image url="@../imgs/img/BackTest.png" />
                            </image>
+                           <HBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </HBox.margin>
                         </ImageView>
                         <ImageView fx:id="imgvDice5ImgLine1" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice5ImgLine1Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
                               <Image url="@../imgs/img/BackTest.png" />
                            </image>
+                           <HBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </HBox.margin>
                         </ImageView>
                         <ImageView fx:id="imgvDice6ImgLine1" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice6ImgLine1Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
                               <Image url="@../imgs/img/BackTest.png" />
                            </image>
+                           <HBox.margin>
+                              <Insets bottom="5.0" />
+                           </HBox.margin>
                         </ImageView>
                      </children>
                   </HBox>
@@ -138,31 +156,49 @@
                            <image>
                               <Image url="@../imgs/img/BackTest.png" />
                            </image>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
                         </ImageView>
                         <ImageView fx:id="imgvDice2ImgLine2" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice2ImgLine2Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
                               <Image url="@../imgs/img/BackTest.png" />
                            </image>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
                         </ImageView>
                         <ImageView fx:id="imgvDice3ImgLine2" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice3ImgLine2Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
                               <Image url="@../imgs/img/BackTest.png" />
                            </image>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
                         </ImageView>
                         <ImageView fx:id="imgvDice4ImgLine2" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice4ImgLine2Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
                               <Image url="@../imgs/img/BackTest.png" />
                            </image>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
                         </ImageView>
                         <ImageView fx:id="imgvDice5ImgLine2" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice5ImgLine2Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
                               <Image url="@../imgs/img/BackTest.png" />
                            </image>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
                         </ImageView>
                         <ImageView fx:id="imgvDice6ImgLine2" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice6ImgLine2Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
                               <Image url="@../imgs/img/BackTest.png" />
                            </image>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
                         </ImageView>
                      </children>
                   </HBox>
