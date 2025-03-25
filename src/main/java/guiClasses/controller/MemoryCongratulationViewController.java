@@ -17,6 +17,7 @@ import java.util.ResourceBundle;
 
 public class MemoryCongratulationViewController implements Initializable {
     private AudioClip congratulationSound;
+    private AudioClip clickUiSound;
     @FXML
     private ImageView imgvHomeImg;
 
@@ -32,6 +33,7 @@ public class MemoryCongratulationViewController implements Initializable {
 
     @FXML
     private void onImgvVowelImgClick(MouseEvent event){
+        clickUiSound.play();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/CompleteTheVowel.fxml"));
             Parent root = loader.load();
@@ -44,6 +46,7 @@ public class MemoryCongratulationViewController implements Initializable {
 
     @FXML
     private void onImgvHomeImgClick(MouseEvent event){
+        clickUiSound.play();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
             Parent root = loader.load();
@@ -70,7 +73,11 @@ public class MemoryCongratulationViewController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String soundClickPath = getClass().getResource("/sounds/congratulation/congratulation.mp3").toString();
         this.congratulationSound = new AudioClip(soundClickPath);
-        this.congratulationSound.setVolume(0.2); // volume 0.0 a 1.0
+        this.congratulationSound.setVolume(0.2);
+
+        String soundClickOnUiPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
+        this.clickUiSound = new AudioClip(soundClickOnUiPath);
+        this.clickUiSound.setVolume(0.3);
 
         congratulationSound.play();
     }

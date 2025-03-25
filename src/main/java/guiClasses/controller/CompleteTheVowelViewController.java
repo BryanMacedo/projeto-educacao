@@ -30,6 +30,7 @@ import java.util.ResourceBundle;
 
 public class CompleteTheVowelViewController implements Initializable {
     private AudioClip clickSound;
+    private AudioClip clickUiSound;
     private AudioClip confirmSound;
     private AudioClip errorSound;
     List<Word> words = new ArrayList<>();
@@ -63,6 +64,7 @@ public class CompleteTheVowelViewController implements Initializable {
 
     @FXML
     private void onImgvDiceImgClick(MouseEvent event){
+        clickUiSound.play();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MemoryView.fxml"));
             Parent root = loader.load();
@@ -75,6 +77,7 @@ public class CompleteTheVowelViewController implements Initializable {
 
     @FXML
     private void onImgvHomeImgClick(MouseEvent event){
+        clickUiSound.play();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
             Parent root = loader.load();
@@ -204,5 +207,9 @@ public class CompleteTheVowelViewController implements Initializable {
         String soundErrorPath = getClass().getResource("/sounds/error/ErrorSound01.mp3").toString();
         this.errorSound = new AudioClip(soundErrorPath);
         this.errorSound.setVolume(0.3);
+
+        String soundClickOnUiPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
+        this.clickUiSound = new AudioClip(soundClickOnUiPath);
+        this.clickUiSound.setVolume(0.3);
     }
 }

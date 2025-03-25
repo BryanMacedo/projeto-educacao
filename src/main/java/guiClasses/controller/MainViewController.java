@@ -7,12 +7,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.AudioClip;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainViewController implements Initializable {
+    private AudioClip clickUiSound;
     @FXML
     private ImageView imgvVowelImg;
 
@@ -21,6 +23,7 @@ public class MainViewController implements Initializable {
 
     @FXML
     private void onImgvVowelImgClick(MouseEvent event){
+        clickUiSound.play();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/CompleteTheVowel.fxml"));
             Parent root = loader.load();
@@ -33,6 +36,7 @@ public class MainViewController implements Initializable {
 
     @FXML
     private void onImgvDiceImgClick(MouseEvent event){
+        clickUiSound.play();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MemoryView.fxml"));
             Parent root = loader.load();
@@ -45,6 +49,8 @@ public class MainViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        String soundClickPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
+        this.clickUiSound = new AudioClip(soundClickPath);
+        this.clickUiSound.setVolume(0.3);
     }
 }

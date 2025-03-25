@@ -19,6 +19,7 @@ import java.util.*;
 
 public class MemoryViewController implements Initializable {
     private AudioClip clickSound;
+    private AudioClip clickUiSound;
     private AudioClip confirmSound;
     private AudioClip errorSound;
     private List<Integer> numbersLine1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
@@ -215,6 +216,10 @@ public class MemoryViewController implements Initializable {
         this.errorSound = new AudioClip(soundErrorPath);
         this.errorSound.setVolume(0.3);
 
+        String soundClickOnUiPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
+        this.clickUiSound = new AudioClip(soundClickOnUiPath);
+        this.clickUiSound.setVolume(0.3);
+
 
         Collections.shuffle(numbersLine1);
         do {
@@ -231,6 +236,7 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private void onImgvVowelImgClick(MouseEvent event) {
+        clickUiSound.play();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/CompleteTheVowel.fxml"));
             Parent root = loader.load();
@@ -243,6 +249,7 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private void onImgvHomeImgClick(MouseEvent event) {
+        clickUiSound.play();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
             Parent root = loader.load();
