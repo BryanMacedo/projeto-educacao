@@ -3,6 +3,7 @@ module org.bryanmacedo.separacaosilabica {
     requires javafx.fxml;
     requires java.sql;
     requires jbcrypt;
+    requires javafx.media;
 
     opens guiClasses.controller to javafx.fxml;
     exports guiClasses.controller to javafx.fxml;

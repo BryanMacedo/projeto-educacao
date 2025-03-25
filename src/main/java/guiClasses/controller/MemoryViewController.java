@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.AudioClip;
 import javafx.util.Duration;
 import model.services.DiceInfos;
 
@@ -17,6 +18,9 @@ import java.net.URL;
 import java.util.*;
 
 public class MemoryViewController implements Initializable {
+    private AudioClip clickSound;
+    private AudioClip confirmSound;
+    private AudioClip errorSound;
     private List<Integer> numbersLine1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
     private List<Integer> numbersLine2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
     private List<DiceInfos> diceInfosList = new ArrayList<>();
@@ -71,6 +75,7 @@ public class MemoryViewController implements Initializable {
             if (diceInfosList.get(0).getImgId() == diceInfosList.get(1).getImgId()) {
                 PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
                 pause.setOnFinished(event -> {
+                    confirmSound.play();
                     System.out.println("Correto!");
                     diceInfosList.get(0).diableClick();
                     diceInfosList.get(1).diableClick();
@@ -91,6 +96,7 @@ public class MemoryViewController implements Initializable {
             } else {
                 PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
                 pause.setOnFinished(event -> {
+                    errorSound.play();
                     System.out.println("Errado!");
                     diceInfosList.get(0).setBackImg();
                     diceInfosList.get(1).setBackImg();
@@ -102,6 +108,7 @@ public class MemoryViewController implements Initializable {
     }
 
     private void onClick(int imgId, ImageView imageView, int index, boolean line) {
+        clickSound.play();
         DiceInfos di = new DiceInfos(imgId, imageView);
         diceInfosList.add(di);
         checkIds();
@@ -196,6 +203,19 @@ public class MemoryViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        String soundClickPath = getClass().getResource("/sounds/click/ClickSound01.mp3").toString();
+        this.clickSound = new AudioClip(soundClickPath);
+        this.clickSound.setVolume(0.2); // volume 0.0 a 1.0
+
+        String soundConfirmPath = getClass().getResource("/sounds/confirm/confirmationSound01.mp3").toString();
+        this.confirmSound = new AudioClip(soundConfirmPath);
+        this.confirmSound.setVolume(0.2);
+
+        String soundErrorPath = getClass().getResource("/sounds/error/ErrorSound01.mp3").toString();
+        this.errorSound = new AudioClip(soundErrorPath);
+        this.errorSound.setVolume(0.3);
+
+
         Collections.shuffle(numbersLine1);
         do {
             Collections.shuffle(numbersLine2);

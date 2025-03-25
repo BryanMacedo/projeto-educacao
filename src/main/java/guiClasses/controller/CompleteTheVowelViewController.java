@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.AudioClip;
 import javafx.util.Duration;
 import model.entities.Word;
 
@@ -28,6 +29,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class CompleteTheVowelViewController implements Initializable {
+    private AudioClip clickSound;
+    private AudioClip confirmSound;
+    private AudioClip errorSound;
     List<Word> words = new ArrayList<>();
 
     @FXML
@@ -107,6 +111,7 @@ public class CompleteTheVowelViewController implements Initializable {
     }
 
     private void writeVowelInTheLabel(String vowel){
+        clickSound.play();
         String newTextLabel = labelWordToComplete.getText();
 
         newTextLabel = newTextLabel.replaceFirst("_", vowel);
@@ -121,6 +126,7 @@ public class CompleteTheVowelViewController implements Initializable {
             labelWordToComplete.setStyle("-fx-text-fill: #FFD700;");
             PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
             pause.setOnFinished(event -> {
+                confirmSound.play();
                 words.remove(0);
                 next();
                 labelWordToComplete.setStyle("-fx-text-fill: white;");
@@ -131,6 +137,7 @@ public class CompleteTheVowelViewController implements Initializable {
             labelWordToComplete.setStyle("-fx-text-fill: #B22222;");
             PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
             pause.setOnFinished(event -> {
+                errorSound.play();
                 labelWordToComplete.setText(words.get(0).getWordWith_());
                 labelWordToComplete.setStyle("-fx-text-fill: white;");
             });
@@ -185,5 +192,17 @@ public class CompleteTheVowelViewController implements Initializable {
             Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + words.get(0).getImgName()));
             MainImage.setImage(newImage);
         }
+
+        String soundClickPath = getClass().getResource("/sounds/click/ClickSound01.mp3").toString();
+        this.clickSound = new AudioClip(soundClickPath);
+        this.clickSound.setVolume(0.2);
+
+        String soundConfirmPath = getClass().getResource("/sounds/confirm/confirmationSound01.mp3").toString();
+        this.confirmSound = new AudioClip(soundConfirmPath);
+        this.confirmSound.setVolume(0.2);
+
+        String soundErrorPath = getClass().getResource("/sounds/error/ErrorSound01.mp3").toString();
+        this.errorSound = new AudioClip(soundErrorPath);
+        this.errorSound.setVolume(0.3);
     }
 }
