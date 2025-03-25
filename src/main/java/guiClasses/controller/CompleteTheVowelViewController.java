@@ -15,7 +15,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import model.entities.Word;
-import model.services.DiceInfos;
 
 import java.io.IOException;
 import java.net.URL;
@@ -146,7 +145,7 @@ public class CompleteTheVowelViewController implements Initializable {
             MainImage.setImage(newImage);
         } else {
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/CongratulationView.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/VowelCongratulationView.fxml"));
                 Parent root = loader.load();
                 Scene scene = labelWordToComplete.getScene();
                 scene.setRoot(root);

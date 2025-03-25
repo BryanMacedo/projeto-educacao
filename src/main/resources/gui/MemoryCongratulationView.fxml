@@ -38,7 +38,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="123.0" prefWidth="26.0">
                <children>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgvVowelImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvVowelImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../imgs/img/ic_Words_out.png" />
                      </image>

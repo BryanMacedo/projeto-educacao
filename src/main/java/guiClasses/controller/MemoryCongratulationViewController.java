@@ -19,10 +19,26 @@ public class MemoryCongratulationViewController implements Initializable {
     private ImageView imgvHomeImg;
 
     @FXML
+    private ImageView imgvVowelImg;
+
+
+    @FXML
     private Label labelCongratulation;
 
     @FXML
     private Button btPlayAgain;
+
+    @FXML
+    private void onImgvVowelImgClick(MouseEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/CompleteTheVowel.fxml"));
+            Parent root = loader.load();
+            Scene scene = imgvHomeImg.getScene();
+            scene.setRoot(root);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     @FXML
     private void onImgvHomeImgClick(MouseEvent event){

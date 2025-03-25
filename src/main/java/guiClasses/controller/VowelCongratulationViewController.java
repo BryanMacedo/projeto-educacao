@@ -14,10 +14,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CongratulationViewController implements Initializable {
+public class VowelCongratulationViewController implements Initializable {
     @FXML
     private ImageView imgvHomeImg;
 
+    @FXML
+    private ImageView imgvDiceImg;
 
     @FXML
     private Label labelCongratulation;
@@ -31,6 +33,18 @@ public class CongratulationViewController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
             Parent root = loader.load();
             Scene scene = imgvHomeImg.getScene();
+            scene.setRoot(root);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    private void onImgvDiceImgClick(MouseEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MemoryView.fxml"));
+            Parent root = loader.load();
+            Scene scene = imgvDiceImg.getScene();
             scene.setRoot(root);
         } catch (IOException e) {
             System.out.println(e.getMessage());
