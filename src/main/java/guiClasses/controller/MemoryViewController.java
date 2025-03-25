@@ -17,26 +17,12 @@ import java.net.URL;
 import java.util.*;
 
 public class MemoryViewController implements Initializable {
-    List<Integer> numbersLine1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
-    List<Integer> numbersLine2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
-    List<DiceInfos> diceInfosList = new ArrayList<>();
-    int hits = 0;
-
-    // AO FINALIZAR A LÓGICA MERLHORAR ESTA MERDA
-    String nameImgFront1L1 = null;
-    String nameImgFront2L1 = null;
-    String nameImgFront3L1 = null;
-    String nameImgFront4L1 = null;
-    String nameImgFront5L1 = null;
-    String nameImgFront6L1 = null;
-
-    String nameImgFront1L2 = null;
-    String nameImgFront2L2 = null;
-    String nameImgFront3L2 = null;
-    String nameImgFront4L2 = null;
-    String nameImgFront5L2 = null;
-    String nameImgFront6L2 = null;
-
+    private List<Integer> numbersLine1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
+    private List<Integer> numbersLine2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
+    private List<DiceInfos> diceInfosList = new ArrayList<>();
+    private List<String> namesImgsFrontL1 = new ArrayList<>();
+    private List<String> namesImgsFrontL2 = new ArrayList<>();
+    private int hits = 0;
 
     @FXML
     private ImageView imgvVowelImg;
@@ -80,9 +66,9 @@ public class MemoryViewController implements Initializable {
     @FXML
     private ImageView imgvDice6ImgLine2;
 
-    private void checkIds(){
-        if (diceInfosList.size() > 1){
-            if (diceInfosList.get(0).getImgId() == diceInfosList.get(1).getImgId()){
+    private void checkIds() {
+        if (diceInfosList.size() > 1) {
+            if (diceInfosList.get(0).getImgId() == diceInfosList.get(1).getImgId()) {
                 PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
                 pause.setOnFinished(event -> {
                     System.out.println("Correto!");
@@ -90,7 +76,7 @@ public class MemoryViewController implements Initializable {
                     diceInfosList.get(1).diableClick();
                     diceInfosList.clear();
                     hits++;
-                    if (hits == 6){
+                    if (hits == 6) {
                         try {
                             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MemoryCongratulationView.fxml"));
                             Parent root = loader.load();
@@ -102,7 +88,7 @@ public class MemoryViewController implements Initializable {
                     }
                 });
                 pause.play();
-            }else {
+            } else {
                 PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
                 pause.setOnFinished(event -> {
                     System.out.println("Errado!");
@@ -115,153 +101,114 @@ public class MemoryViewController implements Initializable {
         }
     }
 
-    // revela a imagem da Linha 1 - inicio
-    // AO FINALIZAR A LÓGICA MERLHORAR ESTA MERDA
+    private void onClick(int imgId, ImageView imageView, int index, boolean line) {
+        DiceInfos di = new DiceInfos(imgId, imageView);
+        diceInfosList.add(di);
+        checkIds();
+        System.out.println(imgId);
+        if (line) {
+            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL1.get(index)));
+            imageView.setImage(newImage);
+        } else {
+            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL2.get(index)));
+            imageView.setImage(newImage);
+        }
+    }
 
+    // revela a imagem da Linha 1 - inicio
 
     @FXML
     private void onImgvDice1ImgLine1Action() {
-        int imgId = Character.getNumericValue(nameImgFront1L1.charAt(9));
-        System.out.println(imgId);
-        DiceInfos diceInfos = new DiceInfos(imgId, imgvDice1ImgLine1);
-        diceInfosList.add(diceInfos);
-        checkIds();
-        Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + nameImgFront1L1));
-        imgvDice1ImgLine1.setImage(newImage);
+        int imgId = Character.getNumericValue(namesImgsFrontL1.get(0).charAt(9));
+        onClick(imgId, imgvDice1ImgLine1, 0, true);
     }
 
     @FXML
     private void onImgvDice2ImgLine1Action() {
-        int imgId = Character.getNumericValue(nameImgFront2L1.charAt(9));
-        System.out.println(imgId);
-        DiceInfos diceInfos = new DiceInfos(imgId, imgvDice2ImgLine1);
-        diceInfosList.add(diceInfos);
-        checkIds();
-        Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + nameImgFront2L1));
-        imgvDice2ImgLine1.setImage(newImage);
+        int imgId = Character.getNumericValue(namesImgsFrontL1.get(1).charAt(9));
+        onClick(imgId, imgvDice2ImgLine1, 1, true);
     }
 
     @FXML
     private void onImgvDice3ImgLine1Action() {
-        int imgId = Character.getNumericValue(nameImgFront3L1.charAt(9));
-        System.out.println(imgId);
-        DiceInfos diceInfos = new DiceInfos(imgId, imgvDice3ImgLine1);
-        diceInfosList.add(diceInfos);
-        checkIds();
-        Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + nameImgFront3L1));
-        imgvDice3ImgLine1.setImage(newImage);
+        int imgId = Character.getNumericValue(namesImgsFrontL1.get(2).charAt(9));
+        onClick(imgId, imgvDice3ImgLine1, 2, true);
     }
 
     @FXML
     private void onImgvDice4ImgLine1Action() {
-        int imgId = Character.getNumericValue(nameImgFront4L1.charAt(9));
-        System.out.println(imgId);
-        DiceInfos diceInfos = new DiceInfos(imgId, imgvDice4ImgLine1);
-        diceInfosList.add(diceInfos);
-        checkIds();
-        Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + nameImgFront4L1));
-        imgvDice4ImgLine1.setImage(newImage);
+        int imgId = Character.getNumericValue(namesImgsFrontL1.get(3).charAt(9));
+        onClick(imgId, imgvDice4ImgLine1, 3, true);
     }
 
     @FXML
     private void onImgvDice5ImgLine1Action() {
-        int imgId = Character.getNumericValue(nameImgFront5L1.charAt(9));
-        System.out.println(imgId);
-        DiceInfos diceInfos = new DiceInfos(imgId, imgvDice5ImgLine1);
-        diceInfosList.add(diceInfos);
-        checkIds();
-        Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + nameImgFront5L1));
-        imgvDice5ImgLine1.setImage(newImage);
+        int imgId = Character.getNumericValue(namesImgsFrontL1.get(4).charAt(9));
+        onClick(imgId, imgvDice5ImgLine1, 4,true);
     }
 
     @FXML
     private void onImgvDice6ImgLine1Action() {
-        int imgId = Character.getNumericValue(nameImgFront6L1.charAt(9));
-        System.out.println(imgId);
-        DiceInfos diceInfos = new DiceInfos(imgId, imgvDice6ImgLine1);
-        diceInfosList.add(diceInfos);
-        checkIds();
-        Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + nameImgFront6L1));
-        imgvDice6ImgLine1.setImage(newImage);
+        int imgId = Character.getNumericValue(namesImgsFrontL1.get(5).charAt(9));
+        onClick(imgId, imgvDice6ImgLine1, 5,true);
     }
 
     // revela a imagem da Linha 1 - fim
 
 
-
     // revela a imagem da Linha 2 - inicio
-    // AO FINALIZAR A LÓGICA MERLHORAR ESTA MERDA
-
     @FXML
     private void onImgvDice1ImgLine2Action() {
-        int imgId = Character.getNumericValue(nameImgFront1L2.charAt(9));
-        System.out.println(imgId);
-        DiceInfos diceInfos = new DiceInfos(imgId, imgvDice1ImgLine2);
-        diceInfosList.add(diceInfos);
-        checkIds();
-        Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + nameImgFront1L2));
-        imgvDice1ImgLine2.setImage(newImage);
+        int imgId = Character.getNumericValue(namesImgsFrontL2.get(0).charAt(9));
+        onClick(imgId, imgvDice1ImgLine2, 0, false);
     }
 
     @FXML
     private void onImgvDice2ImgLine2Action() {
-        int imgId = Character.getNumericValue(nameImgFront2L2.charAt(9));
-        System.out.println(imgId);
-        DiceInfos diceInfos = new DiceInfos(imgId, imgvDice2ImgLine2);
-        diceInfosList.add(diceInfos);
-        checkIds();
-        Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + nameImgFront2L2));
-        imgvDice2ImgLine2.setImage(newImage);
+        int imgId = Character.getNumericValue(namesImgsFrontL2.get(1).charAt(9));
+        onClick(imgId, imgvDice2ImgLine2, 1, false);
     }
 
     @FXML
     private void onImgvDice3ImgLine2Action() {
-        int imgId = Character.getNumericValue(nameImgFront3L2.charAt(9));
-        System.out.println(imgId);
-        DiceInfos diceInfos = new DiceInfos(imgId, imgvDice3ImgLine2);
-        diceInfosList.add(diceInfos);
-        checkIds();
-        Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + nameImgFront3L2));
-        imgvDice3ImgLine2.setImage(newImage);
+        int imgId = Character.getNumericValue(namesImgsFrontL2.get(2).charAt(9));
+        onClick(imgId, imgvDice3ImgLine2, 2, false);
     }
 
     @FXML
     private void onImgvDice4ImgLine2Action() {
-        int imgId = Character.getNumericValue(nameImgFront4L2.charAt(9));
-        System.out.println(imgId);
-        DiceInfos diceInfos = new DiceInfos(imgId, imgvDice4ImgLine2);
-        diceInfosList.add(diceInfos);
-        checkIds();
-        Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + nameImgFront4L2));
-        imgvDice4ImgLine2.setImage(newImage);
+        int imgId = Character.getNumericValue(namesImgsFrontL2.get(3).charAt(9));
+        onClick(imgId, imgvDice4ImgLine2, 3, false);
     }
 
     @FXML
     private void onImgvDice5ImgLine2Action() {
-        int imgId = Character.getNumericValue(nameImgFront5L2.charAt(9));
-        System.out.println(imgId);
-        DiceInfos diceInfos = new DiceInfos(imgId, imgvDice5ImgLine2);
-        diceInfosList.add(diceInfos);
-        checkIds();
-        Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + nameImgFront5L2));
-        imgvDice5ImgLine2.setImage(newImage);
+        int imgId = Character.getNumericValue(namesImgsFrontL2.get(4).charAt(9));
+        onClick(imgId, imgvDice5ImgLine2, 4, false);
     }
 
     @FXML
     private void onImgvDice6ImgLine2Action() {
-        int imgId = Character.getNumericValue(nameImgFront6L2.charAt(9));
-        System.out.println(imgId);
-        DiceInfos diceInfos = new DiceInfos(imgId, imgvDice6ImgLine2);
-        diceInfosList.add(diceInfos);
-        checkIds();
-        Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + nameImgFront6L2));
-        imgvDice6ImgLine2.setImage(newImage);
+        int imgId = Character.getNumericValue(namesImgsFrontL2.get(5).charAt(9));
+        onClick(imgId, imgvDice6ImgLine2, 5, false);
     }
-
     // revela a imagem da Linha 2 - fim
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Collections.shuffle(numbersLine1);
+        do {
+            Collections.shuffle(numbersLine2);
+        } while (numbersLine1.equals(numbersLine2));
 
-    // vai para a atividade de vogais
+        for (int i = 0; i < 6; i++) {
+            namesImgsFrontL1.add("FrontTest" + numbersLine1.get(i) + ".png");
+            namesImgsFrontL2.add("FrontTest" + numbersLine2.get(i) + ".png");
+        }
+    }
+
+    // vai para outras views
+
     @FXML
     private void onImgvVowelImgClick(MouseEvent event) {
         try {
@@ -274,7 +221,6 @@ public class MemoryViewController implements Initializable {
         }
     }
 
-    // volta para a mainView
     @FXML
     private void onImgvHomeImgClick(MouseEvent event) {
         try {
@@ -285,39 +231,5 @@ public class MemoryViewController implements Initializable {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Image backImg = new Image(getClass().getResourceAsStream("/imgs/img/BackTest.png"));
-        // AO FINALIZAR A LÓGICA MERLHORAR ESTA MERDA
-        Collections.shuffle(numbersLine1);
-        do {
-            Collections.shuffle(numbersLine2);
-        } while (numbersLine1.equals(numbersLine2));
-
-        for (Integer i : numbersLine1) {
-            System.out.println(i);
-        }
-
-        System.out.println("----------");
-
-        for (Integer i : numbersLine2) {
-            System.out.println(i);
-        }
-
-        nameImgFront1L1 = "FrontTest" + numbersLine1.get(0) + ".png";
-        nameImgFront2L1 = "FrontTest" + numbersLine1.get(1) + ".png";
-        nameImgFront3L1 = "FrontTest" + numbersLine1.get(2) + ".png";
-        nameImgFront4L1 = "FrontTest" + numbersLine1.get(3) + ".png";
-        nameImgFront5L1 = "FrontTest" + numbersLine1.get(4) + ".png";
-        nameImgFront6L1 = "FrontTest" + numbersLine1.get(5) + ".png";
-
-        nameImgFront1L2 = "FrontTest" + numbersLine2.get(0) + ".png";
-        nameImgFront2L2 = "FrontTest" + numbersLine2.get(1) + ".png";
-        nameImgFront3L2 = "FrontTest" + numbersLine2.get(2) + ".png";
-        nameImgFront4L2 = "FrontTest" + numbersLine2.get(3) + ".png";
-        nameImgFront5L2 = "FrontTest" + numbersLine2.get(4) + ".png";
-        nameImgFront6L2 = "FrontTest" + numbersLine2.get(5) + ".png";
     }
 }
