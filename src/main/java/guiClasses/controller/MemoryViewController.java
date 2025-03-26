@@ -32,7 +32,7 @@ public class MemoryViewController implements Initializable {
     private List<ImageView> imageViewListL1 = new ArrayList<>();
     private List<ImageView> imageViewListL2 = new ArrayList<>();
     private List<ImageView> imgvsClicked = new ArrayList<>();
-    //private List<ImageView> rights = new ArrayList<>();
+    private List<ImageView> right = new ArrayList<>();
     private int hits = 0;
 
     @FXML
@@ -79,17 +79,26 @@ public class MemoryViewController implements Initializable {
 
     private void checkIds() {
         if (diceInfosList.size() > 1) {
+            //desabilita todas as views para não causar bugs
+            for (int i = 0; i < imageViewListL1.size(); i++) {
+                imageViewListL1.get(i).setDisable(true);
+            }
+
+            for (int i = 0; i < imageViewListL2.size(); i++) {
+                imageViewListL2.get(i).setDisable(true);
+            }
             if (diceInfosList.get(0).getImgId() == diceInfosList.get(1).getImgId()) {
-//                rights.add(diceInfosList.get(0).getImgvDice());
-//                rights.add(diceInfosList.get(1).getImgvDice());
                 PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
                 pause.setOnFinished(event -> {
                     confirmSound.play();
                     System.out.println("Correto!");
                     diceInfosList.get(0).diableClick();
                     diceInfosList.get(1).diableClick();
+                    right.add(diceInfosList.get(0).getImgvDice());
+                    right.add(diceInfosList.get(1).getImgvDice());
                     diceInfosList.clear();
                     hits++;
+                    imgvsClicked.clear();
                     if (hits == 6) {
                         try {
                             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MemoryCongratulationView.fxml"));
@@ -100,6 +109,32 @@ public class MemoryViewController implements Initializable {
                             System.out.println(e.getMessage());
                         }
                     }
+
+                    if (right.isEmpty()) {
+                        for (ImageView imageView : imageViewListL1) {
+                            imageView.setDisable(false);
+                        }
+
+                        for (ImageView imageView : imageViewListL2) {
+                            imageView.setDisable(false);
+                        }
+
+                    } else {
+                        // habilita todas as q n estão corretas
+                        for (ImageView imageView : imageViewListL1) {
+                            if (!right.contains(imageView)) {
+                                imageView.setDisable(false);
+                            }
+                        }
+
+                        for (ImageView imageView : imageViewListL2) {
+                            if (!right.contains(imageView)) {
+                                imageView.setDisable(false);
+                            }
+                        }
+                    }
+
+
                 });
                 pause.play();
             } else {
@@ -110,11 +145,24 @@ public class MemoryViewController implements Initializable {
                     diceInfosList.get(0).setBackImg();
                     diceInfosList.get(1).setBackImg();
                     diceInfosList.clear();
+
                     if (imgvsClicked.size() > 1) {
-                        imgvsClicked.get(0).setDisable(false);
-                        imgvsClicked.get(1).setDisable(false);
                         imgvsClicked.clear();
+
+                        // habilita todas as q n estão corretas
+                        for (ImageView imageView : imageViewListL1) {
+                            if (!right.contains(imageView)) {
+                                imageView.setDisable(false);
+                            }
+                        }
+
+                        for (ImageView imageView : imageViewListL2) {
+                            if (!right.contains(imageView)) {
+                                imageView.setDisable(false);
+                            }
+                        }
                     }
+
 
                 });
                 pause.play();
