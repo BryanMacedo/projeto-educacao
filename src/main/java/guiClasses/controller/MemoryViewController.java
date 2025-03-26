@@ -31,7 +31,8 @@ public class MemoryViewController implements Initializable {
     private List<Image> images = new ArrayList<>();
     private List<ImageView> imageViewListL1 = new ArrayList<>();
     private List<ImageView> imageViewListL2 = new ArrayList<>();
-    //private List<ImageView> imageViewListL1 = new ArrayList<>();
+    private List<ImageView> imgvsClicked = new ArrayList<>();
+    //private List<ImageView> rights = new ArrayList<>();
     private int hits = 0;
 
     @FXML
@@ -79,6 +80,8 @@ public class MemoryViewController implements Initializable {
     private void checkIds() {
         if (diceInfosList.size() > 1) {
             if (diceInfosList.get(0).getImgId() == diceInfosList.get(1).getImgId()) {
+//                rights.add(diceInfosList.get(0).getImgvDice());
+//                rights.add(diceInfosList.get(1).getImgvDice());
                 PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
                 pause.setOnFinished(event -> {
                     confirmSound.play();
@@ -107,6 +110,12 @@ public class MemoryViewController implements Initializable {
                     diceInfosList.get(0).setBackImg();
                     diceInfosList.get(1).setBackImg();
                     diceInfosList.clear();
+                    if (imgvsClicked.size() > 1) {
+                        imgvsClicked.get(0).setDisable(false);
+                        imgvsClicked.get(1).setDisable(false);
+                        imgvsClicked.clear();
+                    }
+
                 });
                 pause.play();
             }
@@ -134,36 +143,48 @@ public class MemoryViewController implements Initializable {
     private void onImgvDice1ImgLine1Action() {
         int imgId = Character.getNumericValue(namesImgsFrontL1.get(0).charAt(9));
         onClick(imgId, imgvDice1ImgLine1, 0, true);
+        imgvDice1ImgLine1.setDisable(true);
+        imgvsClicked.add(imgvDice1ImgLine1);
     }
 
     @FXML
     private void onImgvDice2ImgLine1Action() {
         int imgId = Character.getNumericValue(namesImgsFrontL1.get(1).charAt(9));
         onClick(imgId, imgvDice2ImgLine1, 1, true);
+        imgvDice2ImgLine1.setDisable(true);
+        imgvsClicked.add(imgvDice2ImgLine1);
     }
 
     @FXML
     private void onImgvDice3ImgLine1Action() {
         int imgId = Character.getNumericValue(namesImgsFrontL1.get(2).charAt(9));
         onClick(imgId, imgvDice3ImgLine1, 2, true);
+        imgvDice3ImgLine1.setDisable(true);
+        imgvsClicked.add(imgvDice3ImgLine1);
     }
 
     @FXML
     private void onImgvDice4ImgLine1Action() {
         int imgId = Character.getNumericValue(namesImgsFrontL1.get(3).charAt(9));
         onClick(imgId, imgvDice4ImgLine1, 3, true);
+        imgvDice4ImgLine1.setDisable(true);
+        imgvsClicked.add(imgvDice4ImgLine1);
     }
 
     @FXML
     private void onImgvDice5ImgLine1Action() {
         int imgId = Character.getNumericValue(namesImgsFrontL1.get(4).charAt(9));
-        onClick(imgId, imgvDice5ImgLine1, 4,true);
+        onClick(imgId, imgvDice5ImgLine1, 4, true);
+        imgvDice5ImgLine1.setDisable(true);
+        imgvsClicked.add(imgvDice5ImgLine1);
     }
 
     @FXML
     private void onImgvDice6ImgLine1Action() {
         int imgId = Character.getNumericValue(namesImgsFrontL1.get(5).charAt(9));
-        onClick(imgId, imgvDice6ImgLine1, 5,true);
+        onClick(imgId, imgvDice6ImgLine1, 5, true);
+        imgvDice6ImgLine1.setDisable(true);
+        imgvsClicked.add(imgvDice6ImgLine1);
     }
 
     // revela a imagem da Linha 1 - fim
@@ -174,64 +195,74 @@ public class MemoryViewController implements Initializable {
     private void onImgvDice1ImgLine2Action() {
         int imgId = Character.getNumericValue(namesImgsFrontL2.get(0).charAt(9));
         onClick(imgId, imgvDice1ImgLine2, 0, false);
+        imgvDice1ImgLine2.setDisable(true);
+        imgvsClicked.add(imgvDice1ImgLine2);
     }
 
     @FXML
     private void onImgvDice2ImgLine2Action() {
         int imgId = Character.getNumericValue(namesImgsFrontL2.get(1).charAt(9));
         onClick(imgId, imgvDice2ImgLine2, 1, false);
+        imgvDice2ImgLine2.setDisable(true);
+        imgvsClicked.add(imgvDice2ImgLine2);
     }
 
     @FXML
     private void onImgvDice3ImgLine2Action() {
         int imgId = Character.getNumericValue(namesImgsFrontL2.get(2).charAt(9));
         onClick(imgId, imgvDice3ImgLine2, 2, false);
+        imgvDice3ImgLine2.setDisable(true);
+        imgvsClicked.add(imgvDice3ImgLine2);
     }
 
     @FXML
     private void onImgvDice4ImgLine2Action() {
         int imgId = Character.getNumericValue(namesImgsFrontL2.get(3).charAt(9));
         onClick(imgId, imgvDice4ImgLine2, 3, false);
+        imgvDice4ImgLine2.setDisable(true);
+        imgvsClicked.add(imgvDice4ImgLine2);
     }
 
     @FXML
     private void onImgvDice5ImgLine2Action() {
         int imgId = Character.getNumericValue(namesImgsFrontL2.get(4).charAt(9));
         onClick(imgId, imgvDice5ImgLine2, 4, false);
+        imgvDice5ImgLine2.setDisable(true);
+        imgvsClicked.add(imgvDice5ImgLine2);
     }
 
     @FXML
     private void onImgvDice6ImgLine2Action() {
         int imgId = Character.getNumericValue(namesImgsFrontL2.get(5).charAt(9));
         onClick(imgId, imgvDice6ImgLine2, 5, false);
+        imgvDice6ImgLine2.setDisable(true);
+        imgvsClicked.add(imgvDice6ImgLine2);
     }
     // revela a imagem da Linha 2 - fim
 
 
-
-
-    private void showFrontImgs(){
+    private void showFrontImgs() {
 
         //L1
         images.clear();
-        for (int i = 0; i < namesImgsFrontL1.size();i++){
+        for (int i = 0; i < namesImgsFrontL1.size(); i++) {
             Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL1.get(i)));
             images.add(newImage);
         }
 
-        for (int i = 0; i < imageViewListL1.size(); i++){
+        for (int i = 0; i < imageViewListL1.size(); i++) {
             imageViewListL1.get(i).setImage(images.get(i));
             imageViewListL1.get(i).setDisable(true);
         }
 
         //L2
         images.clear();
-        for (int i = 0; i < namesImgsFrontL2.size();i++){
+        for (int i = 0; i < namesImgsFrontL2.size(); i++) {
             Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL2.get(i)));
             images.add(newImage);
         }
 
-        for (int i = 0; i < imageViewListL2.size(); i++){
+        for (int i = 0; i < imageViewListL2.size(); i++) {
             imageViewListL2.get(i).setImage(images.get(i));
             imageViewListL2.get(i).setDisable(true);
         }
@@ -239,12 +270,12 @@ public class MemoryViewController implements Initializable {
         PauseTransition pause = new PauseTransition(Duration.seconds(3.0));
         pause.setOnFinished(event -> {
 
-            for (int i = 0; i < imageViewListL1.size(); i++){
+            for (int i = 0; i < imageViewListL1.size(); i++) {
                 imageViewListL1.get(i).setImage(backImg);
                 imageViewListL1.get(i).setDisable(false);
             }
 
-            for (int i = 0; i < imageViewListL2.size(); i++){
+            for (int i = 0; i < imageViewListL2.size(); i++) {
                 imageViewListL2.get(i).setImage(backImg);
                 imageViewListL2.get(i).setDisable(false);
             }
@@ -281,6 +312,7 @@ public class MemoryViewController implements Initializable {
             namesImgsFrontL2.add("FrontTest" + numbersLine2.get(i) + ".png");
         }
 
+        //L1
         imageViewListL1.add(imgvDice1ImgLine1);
         imageViewListL1.add(imgvDice2ImgLine1);
         imageViewListL1.add(imgvDice3ImgLine1);
@@ -288,6 +320,7 @@ public class MemoryViewController implements Initializable {
         imageViewListL1.add(imgvDice5ImgLine1);
         imageViewListL1.add(imgvDice6ImgLine1);
 
+        //L2
         imageViewListL2.add(imgvDice1ImgLine2);
         imageViewListL2.add(imgvDice2ImgLine2);
         imageViewListL2.add(imgvDice3ImgLine2);
