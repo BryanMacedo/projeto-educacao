@@ -18,6 +18,7 @@ import java.net.URL;
 import java.util.*;
 
 public class MemoryViewController implements Initializable {
+    private final Image backImg = new Image(getClass().getResourceAsStream("/imgs/img/BackTest.png"));
     private AudioClip clickSound;
     private AudioClip clickUiSound;
     private AudioClip confirmSound;
@@ -27,6 +28,10 @@ public class MemoryViewController implements Initializable {
     private List<DiceInfos> diceInfosList = new ArrayList<>();
     private List<String> namesImgsFrontL1 = new ArrayList<>();
     private List<String> namesImgsFrontL2 = new ArrayList<>();
+    private List<Image> images = new ArrayList<>();
+    private List<ImageView> imageViewListL1 = new ArrayList<>();
+    private List<ImageView> imageViewListL2 = new ArrayList<>();
+    //private List<ImageView> imageViewListL1 = new ArrayList<>();
     private int hits = 0;
 
     @FXML
@@ -202,6 +207,51 @@ public class MemoryViewController implements Initializable {
     }
     // revela a imagem da Linha 2 - fim
 
+
+
+
+    private void showFrontImgs(){
+
+        //L1
+        images.clear();
+        for (int i = 0; i < namesImgsFrontL1.size();i++){
+            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL1.get(i)));
+            images.add(newImage);
+        }
+
+        for (int i = 0; i < imageViewListL1.size(); i++){
+            imageViewListL1.get(i).setImage(images.get(i));
+            imageViewListL1.get(i).setDisable(true);
+        }
+
+        //L2
+        images.clear();
+        for (int i = 0; i < namesImgsFrontL2.size();i++){
+            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL2.get(i)));
+            images.add(newImage);
+        }
+
+        for (int i = 0; i < imageViewListL2.size(); i++){
+            imageViewListL2.get(i).setImage(images.get(i));
+            imageViewListL2.get(i).setDisable(true);
+        }
+
+        PauseTransition pause = new PauseTransition(Duration.seconds(3.0));
+        pause.setOnFinished(event -> {
+
+            for (int i = 0; i < imageViewListL1.size(); i++){
+                imageViewListL1.get(i).setImage(backImg);
+                imageViewListL1.get(i).setDisable(false);
+            }
+
+            for (int i = 0; i < imageViewListL2.size(); i++){
+                imageViewListL2.get(i).setImage(backImg);
+                imageViewListL2.get(i).setDisable(false);
+            }
+        });
+        pause.play();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String soundClickPath = getClass().getResource("/sounds/click/ClickSound01.mp3").toString();
@@ -230,6 +280,22 @@ public class MemoryViewController implements Initializable {
             namesImgsFrontL1.add("FrontTest" + numbersLine1.get(i) + ".png");
             namesImgsFrontL2.add("FrontTest" + numbersLine2.get(i) + ".png");
         }
+
+        imageViewListL1.add(imgvDice1ImgLine1);
+        imageViewListL1.add(imgvDice2ImgLine1);
+        imageViewListL1.add(imgvDice3ImgLine1);
+        imageViewListL1.add(imgvDice4ImgLine1);
+        imageViewListL1.add(imgvDice5ImgLine1);
+        imageViewListL1.add(imgvDice6ImgLine1);
+
+        imageViewListL2.add(imgvDice1ImgLine2);
+        imageViewListL2.add(imgvDice2ImgLine2);
+        imageViewListL2.add(imgvDice3ImgLine2);
+        imageViewListL2.add(imgvDice4ImgLine2);
+        imageViewListL2.add(imgvDice5ImgLine2);
+        imageViewListL2.add(imgvDice6ImgLine2);
+
+        showFrontImgs();
     }
 
     // vai para outras views
