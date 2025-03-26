@@ -1,5 +1,6 @@
 package guiClasses.controller;
 
+import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -10,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.AudioClip;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,6 +20,7 @@ import java.util.ResourceBundle;
 public class VowelCongratulationViewController implements Initializable {
     private AudioClip congratulationSound;
     private AudioClip clickUiSound;
+    private AudioClip clickBackSound;
 
     @FXML
     private ImageView imgvHomeImg;
@@ -33,14 +36,16 @@ public class VowelCongratulationViewController implements Initializable {
 
     @FXML
     private void onImgvHomeImgClick(MouseEvent event){
-        clickUiSound.play();
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
-            Parent root = loader.load();
-            Scene scene = imgvHomeImg.getScene();
-            scene.setRoot(root);
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
+        if (event.getTarget() instanceof ImageView) {
+            clickUiSound.play();
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
+                Parent root = loader.load();
+                Scene scene = imgvHomeImg.getScene();
+                scene.setRoot(root);
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 
@@ -59,6 +64,7 @@ public class VowelCongratulationViewController implements Initializable {
 
     @FXML
     private void onBtPlayAgainAction(){
+        clickBackSound.play();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/CompleteTheVowel.fxml"));
             Parent root = loader.load();
@@ -79,6 +85,23 @@ public class VowelCongratulationViewController implements Initializable {
         this.clickUiSound = new AudioClip(soundClickOnUiPath);
         this.clickUiSound.setVolume(0.3);
 
+        String soundBackPath = getClass().getResource("/sounds/back/BackSound01.mp3").toString();
+        this.clickBackSound = new AudioClip(soundBackPath);
+        this.clickBackSound.setVolume(0.3);
+
         congratulationSound.play();
+
+
+        btPlayAgain.setDisable(true);
+        imgvDiceImg.setDisable(true);
+        imgvHomeImg.setDisable(true);
+
+        PauseTransition pause = new PauseTransition(Duration.seconds(4.5));
+        pause.setOnFinished(event -> {
+            btPlayAgain.setDisable(false);
+            imgvDiceImg.setDisable(false);
+            imgvHomeImg.setDisable(false);
+        });
+        pause.play();
     }
 }
