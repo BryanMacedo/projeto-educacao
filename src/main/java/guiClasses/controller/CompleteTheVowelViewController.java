@@ -33,7 +33,8 @@ public class CompleteTheVowelViewController implements Initializable {
     private AudioClip clickUiSound;
     private AudioClip confirmSound;
     private AudioClip errorSound;
-    List<Word> words = new ArrayList<>();
+    private List<Word> words = new ArrayList<>();
+    private List<Button> bts = new ArrayList<>();
 
     @FXML
     private ImageView imgvHomeImg;
@@ -126,23 +127,35 @@ public class CompleteTheVowelViewController implements Initializable {
     private void VerifyWord() {
         String textLabelWordToComplete = labelWordToComplete.getText();
         if (!textLabelWordToComplete.contains("_") && textLabelWordToComplete.equals(words.get(0).getFullWords())) {
-            labelWordToComplete.setStyle("-fx-text-fill: #FFD700;");
+            for (Button bt : bts) {
+                bt.setDisable(true);
+            }
+            labelWordToComplete.setStyle("-fx-text-fill: green;");
             PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
             pause.setOnFinished(event -> {
                 confirmSound.play();
                 words.remove(0);
                 next();
                 labelWordToComplete.setStyle("-fx-text-fill: white;");
+                for (Button bt : bts) {
+                    bt.setDisable(false);
+                }
             });
             pause.play();
 
         } else if (!textLabelWordToComplete.contains("_") && !textLabelWordToComplete.equals(words.get(0).getFullWords())) {
+            for (Button bt : bts) {
+                bt.setDisable(true);
+            }
             labelWordToComplete.setStyle("-fx-text-fill: #B22222;");
             PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
             pause.setOnFinished(event -> {
                 errorSound.play();
                 labelWordToComplete.setText(words.get(0).getWordWith_());
                 labelWordToComplete.setStyle("-fx-text-fill: white;");
+                for (Button bt : bts) {
+                    bt.setDisable(false);
+                }
             });
             pause.play();
         }
@@ -211,5 +224,11 @@ public class CompleteTheVowelViewController implements Initializable {
         String soundClickOnUiPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
         this.clickUiSound = new AudioClip(soundClickOnUiPath);
         this.clickUiSound.setVolume(0.3);
+
+        bts.add(btLetterA);
+        bts.add(btLetterE);
+        bts.add(btLetterI);
+        bts.add(btLetterO);
+        bts.add(btLetterU);
     }
 }
