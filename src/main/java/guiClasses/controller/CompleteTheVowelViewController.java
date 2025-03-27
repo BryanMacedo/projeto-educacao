@@ -37,6 +37,9 @@ public class CompleteTheVowelViewController implements Initializable {
     private List<Button> bts = new ArrayList<>();
 
     @FXML
+    private ImageView imgvMathImg;
+
+    @FXML
     private ImageView imgvHomeImg;
 
     @FXML
@@ -62,6 +65,21 @@ public class CompleteTheVowelViewController implements Initializable {
 
     @FXML
     private Button btLetterU;
+
+
+
+    @FXML
+    private void onImgvMathImgClick(MouseEvent event){
+        clickUiSound.play();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MathView.fxml"));
+            Parent root = loader.load();
+            Scene scene = imgvMathImg.getScene();
+            scene.setRoot(root);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     @FXML
     private void onImgvDiceImgClick(MouseEvent event){

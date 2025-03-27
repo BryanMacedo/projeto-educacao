@@ -13,24 +13,33 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainViewController implements Initializable {
+public class MathViewController implements Initializable {
     private AudioClip clickUiSound;
+
+    @FXML
+    private ImageView imgvHomeImg;
+
     @FXML
     private ImageView imgvVowelImg;
 
     @FXML
     private ImageView imgvDiceImg;
 
-    @FXML
-    private ImageView imgvMathImg;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        String soundClickOnUiPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
+        this.clickUiSound = new AudioClip(soundClickOnUiPath);
+        this.clickUiSound.setVolume(0.3);
+    }
 
     @FXML
-    private void onImgvMathImgClick(MouseEvent event){
+    private void onImgvDiceImgClick(MouseEvent event){
         clickUiSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MathView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MemoryView.fxml"));
             Parent root = loader.load();
-            Scene scene = imgvVowelImg.getScene();
+            Scene scene = imgvDiceImg.getScene();
             scene.setRoot(root);
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -51,22 +60,15 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
-    private void onImgvDiceImgClick(MouseEvent event){
+    private void onImgvHomeImgClick(MouseEvent event){
         clickUiSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MemoryView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
             Parent root = loader.load();
-            Scene scene = imgvDiceImg.getScene();
+            Scene scene = imgvHomeImg.getScene();
             scene.setRoot(root);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        String soundClickPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
-        this.clickUiSound = new AudioClip(soundClickPath);
-        this.clickUiSound.setVolume(0.3);
     }
 }

@@ -42,6 +42,9 @@ public class MemoryViewController implements Initializable {
     private ImageView imgvHomeImg;
 
     @FXML
+    private ImageView imgvMathImg;
+
+    @FXML
     private ImageView imgvDice1ImgLine1;
 
     @FXML
@@ -380,6 +383,19 @@ public class MemoryViewController implements Initializable {
     }
 
     // vai para outras views
+
+    @FXML
+    private void onImgvMathImgClick(MouseEvent event){
+        clickUiSound.play();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MathView.fxml"));
+            Parent root = loader.load();
+            Scene scene = imgvMathImg.getScene();
+            scene.setRoot(root);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     @FXML
     private void onImgvVowelImgClick(MouseEvent event) {

@@ -28,12 +28,28 @@ public class MemoryCongratulationViewController implements Initializable {
     @FXML
     private ImageView imgvVowelImg;
 
+    @FXML
+    private ImageView imgvMathImg;
+
 
     @FXML
     private Label labelCongratulation;
 
     @FXML
     private Button btPlayAgain;
+
+    @FXML
+    private void onImgvMathImgClick(MouseEvent event){
+        clickUiSound.play();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MathView.fxml"));
+            Parent root = loader.load();
+            Scene scene = imgvMathImg.getScene();
+            scene.setRoot(root);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     @FXML
     private void onImgvVowelImgClick(MouseEvent event){
@@ -95,12 +111,14 @@ public class MemoryCongratulationViewController implements Initializable {
         btPlayAgain.setDisable(true);
         imgvVowelImg.setDisable(true);
         imgvHomeImg.setDisable(true);
+        imgvMathImg.setDisable(true);
 
         PauseTransition pause = new PauseTransition(Duration.seconds(4.5));
         pause.setOnFinished(event -> {
             btPlayAgain.setDisable(false);
             imgvVowelImg.setDisable(false);
             imgvHomeImg.setDisable(false);
+            imgvMathImg.setDisable(false);
         });
         pause.play();
     }
