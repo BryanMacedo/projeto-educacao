@@ -241,6 +241,60 @@ public class MathViewController implements Initializable {
                     pause.play();
                 }
             }
+
+            case "x" ->{
+                if (earlyExpression * userAnswer == result){
+                    labelMain.setStyle(("-fx-text-fill: green;"));
+                    labelEarlyExpression.setStyle(("-fx-text-fill: green;"));
+                    labelOperation.setStyle(("-fx-text-fill: green;"));
+                    labelAnswerUser.setStyle(("-fx-text-fill: green;"));
+
+                    PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
+                    pause.setOnFinished(event -> {
+                        confirmSound.play();
+                        labelMain.setStyle(("-fx-text-fill: white;"));
+                        labelEarlyExpression.setStyle(("-fx-text-fill: white;"));
+                        labelOperation.setStyle(("-fx-text-fill: white;"));
+                        labelAnswerUser.setStyle(("-fx-text-fill: white;"));
+
+                        expressionsList.remove(0);
+
+                        // reabilitar
+                        btR1.setDisable(false);
+                        btR2.setDisable(false);
+                        btR3.setDisable(false);
+                        btR4.setDisable(false);
+
+                        //metodo q troca a expressão
+                        nextExpression();
+                    });
+                    pause.play();
+
+                }else {
+                    labelMain.setStyle(("-fx-text-fill: red;"));
+                    labelEarlyExpression.setStyle(("-fx-text-fill: red;"));
+                    labelOperation.setStyle(("-fx-text-fill: red;"));
+                    labelAnswerUser.setStyle(("-fx-text-fill: red;"));
+
+                    PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
+                    pause.setOnFinished(event -> {
+                        errorSound.play();
+                        labelMain.setStyle(("-fx-text-fill: white;"));
+                        labelEarlyExpression.setStyle(("-fx-text-fill: white;"));
+                        labelOperation.setStyle(("-fx-text-fill: white;"));
+                        labelAnswerUser.setStyle(("-fx-text-fill: white;"));
+                        labelAnswerUser.setText("?");
+
+                        // reabilitar
+                        btR1.setDisable(false);
+                        btR2.setDisable(false);
+                        btR3.setDisable(false);
+                        btR4.setDisable(false);
+                    });
+                    pause.play();
+                }
+            }
+
         }
     }
 
