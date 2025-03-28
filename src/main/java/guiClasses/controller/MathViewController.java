@@ -33,6 +33,9 @@ public class MathViewController implements Initializable {
 
 
     private AudioClip clickUiSound;
+    private AudioClip clickSound;
+    private AudioClip confirmSound;
+    private AudioClip errorSound;
 
     @FXML
     private ImageView imgvHomeImg;
@@ -68,24 +71,28 @@ public class MathViewController implements Initializable {
 
     @FXML
     private void onBtR1Action(){
+        clickSound.play();
         labelAnswerUser.setText(btR1.getText());
         verifyExpression();
     }
 
     @FXML
     private void onBtR2Action(){
+        clickSound.play();
         labelAnswerUser.setText(btR2.getText());
         verifyExpression();
     }
 
     @FXML
     private void onBtR3Action(){
+        clickSound.play();
         labelAnswerUser.setText(btR3.getText());
         verifyExpression();
     }
 
     @FXML
     private void onBtR4Action(){
+        clickSound.play();
         labelAnswerUser.setText(btR4.getText());
         verifyExpression();
     }
@@ -105,6 +112,14 @@ public class MathViewController implements Initializable {
             btR4.setText(String.valueOf(expressionsList.get(0).getAnswers().get(3)));
         }else {
             //chamar a congratulationView
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MathCongratulationView.fxml"));
+                Parent root = loader.load();
+                Scene scene = labelMain.getScene();
+                scene.setRoot(root);
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 
@@ -131,6 +146,7 @@ public class MathViewController implements Initializable {
 
                     PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
                     pause.setOnFinished(event -> {
+                        confirmSound.play();
                         labelMain.setStyle(("-fx-text-fill: white;"));
                         labelEarlyExpression.setStyle(("-fx-text-fill: white;"));
                         labelOperation.setStyle(("-fx-text-fill: white;"));
@@ -157,6 +173,7 @@ public class MathViewController implements Initializable {
 
                     PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
                     pause.setOnFinished(event -> {
+                        errorSound.play();
                         labelMain.setStyle(("-fx-text-fill: white;"));
                         labelEarlyExpression.setStyle(("-fx-text-fill: white;"));
                         labelOperation.setStyle(("-fx-text-fill: white;"));
@@ -181,6 +198,7 @@ public class MathViewController implements Initializable {
 
                     PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
                     pause.setOnFinished(event -> {
+                        confirmSound.play();
                         labelMain.setStyle(("-fx-text-fill: white;"));
                         labelEarlyExpression.setStyle(("-fx-text-fill: white;"));
                         labelOperation.setStyle(("-fx-text-fill: white;"));
@@ -207,6 +225,7 @@ public class MathViewController implements Initializable {
 
                     PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
                     pause.setOnFinished(event -> {
+                        errorSound.play();
                         labelMain.setStyle(("-fx-text-fill: white;"));
                         labelEarlyExpression.setStyle(("-fx-text-fill: white;"));
                         labelOperation.setStyle(("-fx-text-fill: white;"));
@@ -230,6 +249,18 @@ public class MathViewController implements Initializable {
         String soundClickOnUiPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
         this.clickUiSound = new AudioClip(soundClickOnUiPath);
         this.clickUiSound.setVolume(0.3);
+
+        String soundClickPath = getClass().getResource("/sounds/click/ClickSound01.mp3").toString();
+        this.clickSound = new AudioClip(soundClickPath);
+        this.clickSound.setVolume(0.2);
+
+        String soundConfirmPath = getClass().getResource("/sounds/confirm/confirmationSound01.mp3").toString();
+        this.confirmSound = new AudioClip(soundConfirmPath);
+        this.confirmSound.setVolume(0.2);
+
+        String soundErrorPath = getClass().getResource("/sounds/error/ErrorSound01.mp3").toString();
+        this.errorSound = new AudioClip(soundErrorPath);
+        this.errorSound.setVolume(0.3);
 
         Connection conn = null;
         PreparedStatement st = null;
