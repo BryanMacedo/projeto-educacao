@@ -1,7 +1,6 @@
 package guiClasses.controller;
 
 import db.DB;
-import db.Exception.DbException;
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -368,7 +367,7 @@ public class MathViewController implements Initializable {
     private void onImgvVowelImgClick(MouseEvent event){
         clickUiSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/CompleteTheVowel.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/VowelView.fxml"));
             Parent root = loader.load();
             Scene scene = imgvVowelImg.getScene();
             scene.setRoot(root);

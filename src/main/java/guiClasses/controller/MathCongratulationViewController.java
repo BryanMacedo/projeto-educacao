@@ -60,7 +60,7 @@ public class MathCongratulationViewController implements Initializable {
         if (event.getTarget() instanceof ImageView) {
             clickUiSound.play();
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/CompleteTheVowel.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/VowelView.fxml"));
                 Parent root = loader.load();
                 Scene scene = imgvHomeImg.getScene();
                 scene.setRoot(root);

@@ -28,7 +28,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class CompleteTheVowelViewController implements Initializable {
+public class VowelViewController implements Initializable {
     private AudioClip clickSound;
     private AudioClip clickUiSound;
     private AudioClip confirmSound;

@@ -15,7 +15,6 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 public class VowelCongratulationViewController implements Initializable {
@@ -83,7 +82,7 @@ public class VowelCongratulationViewController implements Initializable {
     private void onBtPlayAgainAction(){
         clickBackSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/CompleteTheVowel.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/VowelView.fxml"));
             Parent root = loader.load();
             Scene scene = labelCongratulation.getScene();
             scene.setRoot(root);

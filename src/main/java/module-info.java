@@ -1,4 +1,4 @@
-module org.bryanmacedo.separacaosilabica {
+module org.bryanmacedo.atividadesEducacionais {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
@@ -8,6 +8,6 @@ module org.bryanmacedo.separacaosilabica {
     opens guiClasses.controller to javafx.fxml;
     exports guiClasses.controller to javafx.fxml;
 
-    opens org.bryanmacedo.separacaosilabica to javafx.fxml;
-    exports org.bryanmacedo.separacaosilabica;
+    opens org.bryanmacedo.atividadesEducacionais to javafx.fxml;
+    exports org.bryanmacedo.atividadesEducacionais;
 }

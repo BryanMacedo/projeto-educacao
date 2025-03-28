@@ -1,4 +1,4 @@
-package org.bryanmacedo.separacaosilabica;
+package org.bryanmacedo.atividadesEducacionais;
 
 import db.DB;
 import javafx.application.Application;
@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/gui/MainView.fxml"));
-        primaryStage.setTitle("Educação");
+        primaryStage.setTitle("Atividades Educacionais");
         primaryStage.setScene(new Scene(root, 1445, 833));
         primaryStage.show();
 

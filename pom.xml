@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.BryanMacedo</groupId>
-    <artifactId>separacao-silabica</artifactId>
+    <artifactId>atividades-educacionais</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>separacao-silabica</name>
 
@@ -78,7 +78,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                org.bryanmacedo.separacaosilabica/org.bryanmacedo.separacaosilabica.Main
+                                org.bryanmacedo.separacaosilabica/org.bryanmacedo.atividadesEducacionais.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
