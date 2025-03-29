@@ -1,7 +1,9 @@
 package guiClasses.controller;
 
 import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
 import javafx.animation.PauseTransition;
+import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.AudioClip;
+import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 import model.services.DiceInfos;
 
@@ -150,8 +153,8 @@ public class MemoryViewController implements Initializable {
                 pause.setOnFinished(event -> {
                     errorSound.play();
                     System.out.println("Errado!");
-                    diceInfosList.get(0).setBackImg();
-                    diceInfosList.get(1).setBackImg();
+                    flipToBack(diceInfosList.get(0).getImgvDice());
+                    flipToBack(diceInfosList.get(1).getImgvDice());
                     diceInfosList.clear();
 
                     if (imgvsClicked.size() > 1) {
@@ -184,13 +187,9 @@ public class MemoryViewController implements Initializable {
         diceInfosList.add(di);
         checkIds();
         System.out.println(imgId);
-        if (line) {
-            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL1.get(index)));
-            imageView.setImage(newImage);
-        } else {
-            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL2.get(index)));
-            imageView.setImage(newImage);
-        }
+
+
+        flipCard(imageView, index, line);
     }
 
     // revela a imagem da Linha 1 - inicio
@@ -298,45 +297,93 @@ public class MemoryViewController implements Initializable {
 
 
     private void showFrontImgs() {
-
-        //L1
-        images.clear();
-        for (int i = 0; i < namesImgsFrontL1.size(); i++) {
-            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL1.get(i)));
-            images.add(newImage);
-        }
-
+        // 1. Mostra as cartas viradas para frente
         for (int i = 0; i < imageViewListL1.size(); i++) {
-            imageViewListL1.get(i).setImage(images.get(i));
+            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL1.get(i)));
+            imageViewListL1.get(i).setImage(newImage);
             imageViewListL1.get(i).setDisable(true);
         }
 
-        //L2
-        images.clear();
-        for (int i = 0; i < namesImgsFrontL2.size(); i++) {
-            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL2.get(i)));
-            images.add(newImage);
-        }
-
         for (int i = 0; i < imageViewListL2.size(); i++) {
-            imageViewListL2.get(i).setImage(images.get(i));
+            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL2.get(i)));
+            imageViewListL2.get(i).setImage(newImage);
             imageViewListL2.get(i).setDisable(true);
         }
 
+        // 2. Depois de 3 segundos, vira as cartas para trás
         PauseTransition pause = new PauseTransition(Duration.seconds(3.0));
         pause.setOnFinished(event -> {
-
-            for (int i = 0; i < imageViewListL1.size(); i++) {
-                imageViewListL1.get(i).setImage(backImg);
-                imageViewListL1.get(i).setDisable(false);
+            for (ImageView imageView : imageViewListL1) {
+                flipToBack(imageView);
             }
-
-            for (int i = 0; i < imageViewListL2.size(); i++) {
-                imageViewListL2.get(i).setImage(backImg);
-                imageViewListL2.get(i).setDisable(false);
+            for (ImageView imageView : imageViewListL2) {
+                flipToBack(imageView);
             }
         });
         pause.play();
+    }
+
+    private void flipCard(ImageView imageView, int index, boolean line) {
+        // Desativa a ImageView durante a animação
+        imageView.setDisable(true);
+
+        // 1. Primeira metade da animação: gira até 90 graus (fica de lado)
+        RotateTransition rotateOut = new RotateTransition(Duration.millis(150), imageView);
+        rotateOut.setAxis(Rotate.Y_AXIS);
+        rotateOut.setFromAngle(0);
+        rotateOut.setToAngle(90);
+        rotateOut.setInterpolator(Interpolator.LINEAR);
+
+        // quando a carta estiver de lado (90 graus), troca a imagem
+        rotateOut.setOnFinished(event -> {
+            // carrega a nova imagem quando estiver de lado
+            Image newImage;
+            if (line) {
+                newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL1.get(index)));
+            } else {
+                newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL2.get(index)));
+            }
+            imageView.setImage(newImage);
+
+            // completa a rotação até 0 graus
+            RotateTransition rotateIn = new RotateTransition(Duration.millis(150), imageView);
+            rotateIn.setAxis(Rotate.Y_AXIS);
+            rotateIn.setFromAngle(90);
+            rotateIn.setToAngle(0);
+            rotateIn.setInterpolator(Interpolator.LINEAR);
+
+            rotateIn.play();
+        });
+
+        rotateOut.play();
+    }
+
+    private void flipToBack(ImageView imageView) {
+        // 1. Gira até 90 graus (fica de lado)
+        RotateTransition rotateOut = new RotateTransition(Duration.millis(150), imageView);
+        rotateOut.setAxis(Rotate.Y_AXIS);
+        rotateOut.setFromAngle(0);
+        rotateOut.setToAngle(90);
+        rotateOut.setInterpolator(Interpolator.LINEAR);
+
+        // Quando estiver de lado, troca para a imagem de trás
+        rotateOut.setOnFinished(event -> {
+            imageView.setImage(backImg);
+
+            // 2. Completa a rotação até 0 graus
+            RotateTransition rotateIn = new RotateTransition(Duration.millis(150), imageView);
+            rotateIn.setAxis(Rotate.Y_AXIS);
+            rotateIn.setFromAngle(90);
+            rotateIn.setToAngle(0);
+            rotateIn.setInterpolator(Interpolator.LINEAR);
+
+            // Reativa a ImageView
+            rotateIn.setOnFinished(e -> imageView.setDisable(false));
+
+            rotateIn.play();
+        });
+
+        rotateOut.play();
     }
 
     @Override

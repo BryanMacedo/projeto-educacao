@@ -231,12 +231,6 @@ public class VowelViewController implements Initializable {
             MainImage.setImage(newImage);
         }
 
-//        PauseTransition pause = new PauseTransition(Duration.seconds(5.0));
-//        pause.setOnFinished(event -> {
-//
-//        });
-//        pause.play();
-
         FadeTransition fadeOut = new FadeTransition(Duration.seconds(2), explanatoryText);
         fadeOut.setFromValue(1.0); // Opacidade inicial (totalmente visível)
         fadeOut.setToValue(0.0);   // Opacidade final (totalmente invisível)
