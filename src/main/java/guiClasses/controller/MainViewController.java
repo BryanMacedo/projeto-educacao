@@ -33,8 +33,7 @@ public class MainViewController implements Initializable {
             Scene scene = imgvVowelImg.getScene();
             scene.setRoot(root);
         } catch (IOException e) {
-//            System.out.println(e.getMessage());
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 

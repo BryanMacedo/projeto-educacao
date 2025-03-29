@@ -14,6 +14,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/gui/MainView.fxml"));
         primaryStage.setTitle("Atividades Educacionais");
         primaryStage.setScene(new Scene(root, 1445, 833));
+        primaryStage.setMaximized(true);
         primaryStage.show();
 
         Image icon = new Image(getClass().getResourceAsStream("/imgs/icons/IconTest01.png"));

@@ -33,7 +33,6 @@ public class MemoryViewController implements Initializable {
     private List<DiceInfos> diceInfosList = new ArrayList<>();
     private List<String> namesImgsFrontL1 = new ArrayList<>();
     private List<String> namesImgsFrontL2 = new ArrayList<>();
-    private List<Image> images = new ArrayList<>();
     private List<ImageView> imageViewListL1 = new ArrayList<>();
     private List<ImageView> imageViewListL2 = new ArrayList<>();
     private List<ImageView> imgvsClicked = new ArrayList<>();
@@ -102,7 +101,6 @@ public class MemoryViewController implements Initializable {
                 PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
                 pause.setOnFinished(event -> {
                     confirmSound.play();
-                    System.out.println("Correto!");
                     diceInfosList.get(0).diableClick();
                     diceInfosList.get(1).diableClick();
                     right.add(diceInfosList.get(0).getImgvDice());
@@ -152,7 +150,6 @@ public class MemoryViewController implements Initializable {
                 PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
                 pause.setOnFinished(event -> {
                     errorSound.play();
-                    System.out.println("Errado!");
                     flipToBack(diceInfosList.get(0).getImgvDice());
                     flipToBack(diceInfosList.get(1).getImgvDice());
                     diceInfosList.clear();
@@ -186,8 +183,6 @@ public class MemoryViewController implements Initializable {
         DiceInfos di = new DiceInfos(imgId, imageView);
         diceInfosList.add(di);
         checkIds();
-        System.out.println(imgId);
-
 
         flipCard(imageView, index, line);
     }
