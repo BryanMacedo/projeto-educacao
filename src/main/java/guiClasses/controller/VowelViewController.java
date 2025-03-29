@@ -2,6 +2,7 @@ package guiClasses.controller;
 
 import db.DB;
 import db.Exception.DbException;
+import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,6 +51,9 @@ public class VowelViewController implements Initializable {
 
     @FXML
     private Label labelWordToComplete;
+
+    @FXML
+    private Label explanatoryText;
 
     @FXML
     private Button btLetterA;
@@ -226,6 +230,19 @@ public class VowelViewController implements Initializable {
             Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + words.get(0).getImgName()));
             MainImage.setImage(newImage);
         }
+
+//        PauseTransition pause = new PauseTransition(Duration.seconds(5.0));
+//        pause.setOnFinished(event -> {
+//
+//        });
+//        pause.play();
+
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(2), explanatoryText);
+        fadeOut.setFromValue(1.0); // Opacidade inicial (totalmente visível)
+        fadeOut.setToValue(0.0);   // Opacidade final (totalmente invisível)
+        fadeOut.setDelay(Duration.seconds(4));
+
+        fadeOut.play();
 
         String soundClickPath = getClass().getResource("/sounds/click/ClickSound01.mp3").toString();
         this.clickSound = new AudioClip(soundClickPath);

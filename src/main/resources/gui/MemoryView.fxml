@@ -204,6 +204,14 @@
                   </HBox>
                </children>
             </VBox>
+            <Label fx:id="explanatoryText" text="Clique nos quadrados para achar os pares" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets bottom="600.0" />
+               </StackPane.margin>
+            </Label>
          </children>
       </StackPane>
    </center>

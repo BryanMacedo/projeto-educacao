@@ -1,11 +1,13 @@
 package guiClasses.controller;
 
+import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -79,6 +81,9 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private ImageView imgvDice6ImgLine2;
+
+    @FXML
+    private Label explanatoryText;
 
     private void checkIds() {
         if (diceInfosList.size() > 1) {
@@ -336,6 +341,13 @@ public class MemoryViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(2), explanatoryText);
+        fadeOut.setFromValue(1.0);
+        fadeOut.setToValue(0.0);
+        fadeOut.setDelay(Duration.seconds(4));
+
+        fadeOut.play();
+
         String soundClickPath = getClass().getResource("/sounds/click/ClickSound01.mp3").toString();
         this.clickSound = new AudioClip(soundClickPath);
         this.clickSound.setVolume(0.2); // volume 0.0 a 1.0

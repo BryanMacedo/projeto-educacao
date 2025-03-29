@@ -8,6 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -94,63 +95,75 @@
       </HBox>
    </top>
    <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <StackPane BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <ImageView fx:id="MainImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label fx:id="labelWordToComplete" textFill="WHITE">
-                     <font>
-                        <Font size="72.0" />
-                     </font>
-                  </Label>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="MainImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="labelWordToComplete" textFill="WHITE">
+                           <font>
+                              <Font size="72.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1300.0">
+                     <children>
+                        <Button fx:id="btLetterA" mnemonicParsing="false" onAction="#onBtLetterA_Action" styleClass="round-button" text="A">
+                           <HBox.margin>
+                              <Insets right="10.0" top="30.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btLetterE" mnemonicParsing="false" onAction="#onBtLetterE_Action" styleClass="round-button" text="E">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" top="30.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btLetterI" mnemonicParsing="false" onAction="#onBtLetterI_Action" styleClass="round-button" text="I">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" top="30.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btLetterO" mnemonicParsing="false" onAction="#onBtLetterO_Action" styleClass="round-button" text="O">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" top="30.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btLetterU" mnemonicParsing="false" onAction="#onBtLetterU_Action" styleClass="round-button" text="U">
+                           <HBox.margin>
+                              <Insets left="10.0" top="30.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1300.0">
-               <children>
-                  <Button fx:id="btLetterA" mnemonicParsing="false" onAction="#onBtLetterA_Action" styleClass="round-button" text="A">
-                     <HBox.margin>
-                        <Insets right="10.0" top="30.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btLetterE" mnemonicParsing="false" onAction="#onBtLetterE_Action" styleClass="round-button" text="E">
-                     <HBox.margin>
-                        <Insets left="10.0" right="10.0" top="30.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btLetterI" mnemonicParsing="false" onAction="#onBtLetterI_Action" styleClass="round-button" text="I">
-                     <HBox.margin>
-                        <Insets left="10.0" right="10.0" top="30.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btLetterO" mnemonicParsing="false" onAction="#onBtLetterO_Action" styleClass="round-button" text="O">
-                     <HBox.margin>
-                        <Insets left="10.0" right="10.0" top="30.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btLetterU" mnemonicParsing="false" onAction="#onBtLetterU_Action" styleClass="round-button" text="U">
-                     <HBox.margin>
-                        <Insets left="10.0" top="30.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
+            <Label fx:id="explanatoryText" text="Clique nas vogais para completar a palavra" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets bottom="600.0" />
+               </StackPane.margin>
+            </Label>
          </children>
-      </VBox>
+      </StackPane>
    </center>
 </BorderPane>

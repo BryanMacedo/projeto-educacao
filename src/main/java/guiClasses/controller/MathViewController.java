@@ -1,6 +1,7 @@
 package guiClasses.controller;
 
 import db.DB;
+import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,6 +51,9 @@ public class MathViewController implements Initializable {
 
     @FXML
     private Label labelEarlyExpression;
+
+    @FXML
+    private Label explanatoryText;
 
     @FXML
     private Label labelOperation;
@@ -299,6 +303,13 @@ public class MathViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(2), explanatoryText);
+        fadeOut.setFromValue(1.0);
+        fadeOut.setToValue(0.0);
+        fadeOut.setDelay(Duration.seconds(4));
+
+        fadeOut.play();
+
         String soundClickOnUiPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
         this.clickUiSound = new AudioClip(soundClickOnUiPath);
         this.clickUiSound.setVolume(0.3);
