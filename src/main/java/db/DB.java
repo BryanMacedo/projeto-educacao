@@ -3,6 +3,7 @@ package db;
 
 import db.Exception.DbException;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
@@ -17,7 +18,7 @@ public class DB {
             try {
                 Properties props = loadProperties();
                 String url = props.getProperty("dburl");
-                conn = DriverManager.getConnection(url, props);
+                conn = DriverManager.getConnection(url);
             } catch (SQLException e) {
                 throw new DbException(e.getMessage());
             }
