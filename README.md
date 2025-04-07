@@ -6,7 +6,7 @@
 </p>
 <div align="center">
 
-<h2 id="technologies">Tecnologias 💻</h2>
+<h2 align="left" id="technologies">Tecnologias 💻</h2>
   
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![JavaFX](https://img.shields.io/badge/javafx-%23FF0000.svg?style=for-the-badge&logo=javafx&logoColor=white)
