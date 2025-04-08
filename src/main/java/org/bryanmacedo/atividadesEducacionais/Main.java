@@ -8,12 +8,10 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.sql.*;
-
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/MainView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/mainViews/MainView.fxml"));
         primaryStage.setTitle("Atividades Educacionais");
         primaryStage.setScene(new Scene(root, 1445, 833));
         primaryStage.setMaximized(true);

@@ -2,6 +2,7 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -10,25 +11,25 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="833.0" prefWidth="1300.0" styleClass="dark-background" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiClasses.controller.MainViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="833.0" prefWidth="1300.0" styleClass="dark-background" stylesheets="@../../styles/style.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiClasses.controller.mathActivity.MathCongratulationViewController">
    <top>
-      <HBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="200.0" spacing="20.0" styleClass="border-bottom" stylesheets="@../styles/style.css" BorderPane.alignment="CENTER">
+      <HBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="200.0" spacing="20.0" styleClass="border-bottom" stylesheets="@../../styles/style.css" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="23.0" right="30.0" />
          </BorderPane.margin>
          <children>
             <VBox alignment="CENTER" prefHeight="123.0" prefWidth="0.0">
                <children>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgvHomeImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvHomeImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgs/img/ic_Home_in.png" />
+                        <Image url="@../../imgs/img/ic_Home_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
                         <String fx:value="imageHover" />
                      </styleClass>
                   </ImageView>
-                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="123.0" text="Inicio" textFill="WHITE">
+                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="123.0" text="Inicio" textFill="#4f4f4f">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -39,7 +40,7 @@
                <children>
                   <ImageView fx:id="imgvVowelImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvVowelImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgs/img/ic_Vowel_out.png" />
+                        <Image url="@../../imgs/img/ic_Vowel_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -57,7 +58,7 @@
                <children>
                   <ImageView fx:id="imgvDiceImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvDiceImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgs/img/ic_Dice_out.png" />
+                        <Image url="@../../imgs/img/ic_Dice_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -73,16 +74,16 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="123.0" prefWidth="47.0">
                <children>
-                  <ImageView fx:id="imgvMathImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvMathImgClick" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgvMathImg" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgs/img/ic_Math_out.png" />
+                        <Image url="@../../imgs/img/ic_Math_in.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
                         <String fx:value="imageHover" />
                      </styleClass>
                   </ImageView>
-                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="63.0" text="Calcule" textFill="#4f4f4f">
+                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="47.0" text="Calcule" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -93,31 +94,34 @@
       </HBox>
    </top>
    <center>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" onMouseClicked="#onImgvHomeImgClick" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-               <image>
-                  <Image url="@../imgs/img/img_books.png" />
-               </image>
-            </ImageView>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="105.0" prefWidth="1261.0" text="Atividades" textFill="WHITE">
+                  <Label fx:id="labelCongratulation" text="Parabéns! Você acertou todas!" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="72.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" prefHeight="66.0" prefWidth="434.0" text="Educacionais" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="72.0" />
+                        <Font size="72.0" />
                      </font>
                   </Label>
                </children>
             </VBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1300.0">
+               <children>
+                  <Button fx:id="btPlayAgain" maxWidth="219.0" mnemonicParsing="false" onAction="#onBtPlayAgainAction" prefHeight="50.0" prefWidth="219.0" text="Jogar novamente">
+                     <HBox.margin>
+                        <Insets right="10.0" top="30.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="playAgain-button" />
+                        <String fx:value="playAgainHover" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </HBox>
          </children>
-      </HBox>
+      </VBox>
    </center>
 </BorderPane>

@@ -28,7 +28,7 @@ public class MainViewController implements Initializable {
     private void onImgvMathImgClick(MouseEvent event){
         clickUiSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MathView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/mathViews/MathView.fxml"));
             Parent root = loader.load();
             Scene scene = imgvVowelImg.getScene();
             scene.setRoot(root);
@@ -41,7 +41,7 @@ public class MainViewController implements Initializable {
     private void onImgvVowelImgClick(MouseEvent event){
         clickUiSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/VowelView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/vowelViews/VowelView.fxml"));
             Parent root = loader.load();
             Scene scene = imgvVowelImg.getScene();
             scene.setRoot(root);
@@ -55,7 +55,7 @@ public class MainViewController implements Initializable {
     private void onImgvDiceImgClick(MouseEvent event){
         clickUiSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MemoryView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/memoryViews/MemoryView.fxml"));
             Parent root = loader.load();
             Scene scene = imgvDiceImg.getScene();
             scene.setRoot(root);

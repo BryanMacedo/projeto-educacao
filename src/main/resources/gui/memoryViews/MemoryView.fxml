@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="833.0" prefWidth="1300.0" styleClass="dark-background" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiClasses.controller.memoryActivity.MemoryViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="833.0" prefWidth="1300.0" styleClass="dark-background" stylesheets="@../../styles/style.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiClasses.controller.memoryActivity.MemoryViewController">
    <top>
-      <HBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="200.0" spacing="20.0" styleClass="border-bottom" stylesheets="@../styles/style.css" BorderPane.alignment="CENTER">
+      <HBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="200.0" spacing="20.0" styleClass="border-bottom" stylesheets="@../../styles/style.css" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="23.0" right="30.0" />
          </BorderPane.margin>
@@ -22,7 +22,7 @@
                <children>
                   <ImageView fx:id="imgvHomeImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvHomeImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgs/img/ic_Home_out.png" />
+                        <Image url="@../../imgs/img/ic_Home_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -40,7 +40,7 @@
                <children>
                   <ImageView fx:id="imgvVowelImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvVowelImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgs/img/ic_Vowel_out.png" />
+                        <Image url="@../../imgs/img/ic_Vowel_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -58,7 +58,7 @@
                <children>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgs/img/ic_Dice_in.png" />
+                        <Image url="@../../imgs/img/ic_Dice_in.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -76,7 +76,7 @@
                <children>
                   <ImageView fx:id="imgvMathImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvMathImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgs/img/ic_Math_out.png" />
+                        <Image url="@../../imgs/img/ic_Math_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -102,7 +102,7 @@
                      <children>
                         <ImageView fx:id="imgvDice1ImgLine1" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice1ImgLine1Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
-                              <Image url="@../imgs/img/BackTest.png" />
+                              <Image url="@../../imgs/img/BackTest.png" />
                            </image>
                            <HBox.margin>
                               <Insets bottom="5.0" right="5.0" />
@@ -110,7 +110,7 @@
                         </ImageView>
                         <ImageView fx:id="imgvDice2ImgLine1" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice2ImgLine1Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
-                              <Image url="@../imgs/img/BackTest.png" />
+                              <Image url="@../../imgs/img/BackTest.png" />
                            </image>
                            <HBox.margin>
                               <Insets bottom="5.0" right="5.0" />
@@ -118,7 +118,7 @@
                         </ImageView>
                         <ImageView fx:id="imgvDice3ImgLine1" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice3ImgLine1Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
-                              <Image url="@../imgs/img/BackTest.png" />
+                              <Image url="@../../imgs/img/BackTest.png" />
                            </image>
                            <HBox.margin>
                               <Insets bottom="5.0" right="5.0" />
@@ -126,7 +126,7 @@
                         </ImageView>
                         <ImageView fx:id="imgvDice4ImgLine1" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice4ImgLine1Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
-                              <Image url="@../imgs/img/BackTest.png" />
+                              <Image url="@../../imgs/img/BackTest.png" />
                            </image>
                            <HBox.margin>
                               <Insets bottom="5.0" right="5.0" />
@@ -134,7 +134,7 @@
                         </ImageView>
                         <ImageView fx:id="imgvDice5ImgLine1" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice5ImgLine1Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
-                              <Image url="@../imgs/img/BackTest.png" />
+                              <Image url="@../../imgs/img/BackTest.png" />
                            </image>
                            <HBox.margin>
                               <Insets bottom="5.0" right="5.0" />
@@ -142,7 +142,7 @@
                         </ImageView>
                         <ImageView fx:id="imgvDice6ImgLine1" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice6ImgLine1Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
-                              <Image url="@../imgs/img/BackTest.png" />
+                              <Image url="@../../imgs/img/BackTest.png" />
                            </image>
                            <HBox.margin>
                               <Insets bottom="5.0" />
@@ -154,7 +154,7 @@
                      <children>
                         <ImageView fx:id="imgvDice1ImgLine2" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice1ImgLine2Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
-                              <Image url="@../imgs/img/BackTest.png" />
+                              <Image url="@../../imgs/img/BackTest.png" />
                            </image>
                            <HBox.margin>
                               <Insets right="5.0" top="5.0" />
@@ -162,7 +162,7 @@
                         </ImageView>
                         <ImageView fx:id="imgvDice2ImgLine2" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice2ImgLine2Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
-                              <Image url="@../imgs/img/BackTest.png" />
+                              <Image url="@../../imgs/img/BackTest.png" />
                            </image>
                            <HBox.margin>
                               <Insets right="5.0" top="5.0" />
@@ -170,7 +170,7 @@
                         </ImageView>
                         <ImageView fx:id="imgvDice3ImgLine2" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice3ImgLine2Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
-                              <Image url="@../imgs/img/BackTest.png" />
+                              <Image url="@../../imgs/img/BackTest.png" />
                            </image>
                            <HBox.margin>
                               <Insets right="5.0" top="5.0" />
@@ -178,7 +178,7 @@
                         </ImageView>
                         <ImageView fx:id="imgvDice4ImgLine2" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice4ImgLine2Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
-                              <Image url="@../imgs/img/BackTest.png" />
+                              <Image url="@../../imgs/img/BackTest.png" />
                            </image>
                            <HBox.margin>
                               <Insets right="5.0" top="5.0" />
@@ -186,7 +186,7 @@
                         </ImageView>
                         <ImageView fx:id="imgvDice5ImgLine2" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice5ImgLine2Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
-                              <Image url="@../imgs/img/BackTest.png" />
+                              <Image url="@../../imgs/img/BackTest.png" />
                            </image>
                            <HBox.margin>
                               <Insets right="5.0" top="5.0" />
@@ -194,7 +194,7 @@
                         </ImageView>
                         <ImageView fx:id="imgvDice6ImgLine2" fitHeight="90.0" fitWidth="523.0" onMouseClicked="#onImgvDice6ImgLine2Action" pickOnBounds="true" preserveRatio="true" styleClass="imageDice">
                            <image>
-                              <Image url="@../imgs/img/BackTest.png" />
+                              <Image url="@../../imgs/img/BackTest.png" />
                            </image>
                            <HBox.margin>
                               <Insets top="5.0" />

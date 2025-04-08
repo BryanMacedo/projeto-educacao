@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="833.0" prefWidth="1300.0" styleClass="dark-background" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiClasses.controller.memoryActivity.MemoryCongratulationViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="833.0" prefWidth="1300.0" styleClass="dark-background" stylesheets="@../../styles/style.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiClasses.controller.memoryActivity.MemoryCongratulationViewController">
    <top>
-      <HBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="200.0" spacing="20.0" styleClass="border-bottom" stylesheets="@../styles/style.css" BorderPane.alignment="CENTER">
+      <HBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="200.0" spacing="20.0" styleClass="border-bottom" stylesheets="@../../styles/style.css" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="23.0" right="30.0" />
          </BorderPane.margin>
@@ -22,7 +22,7 @@
                <children>
                   <ImageView fx:id="imgvHomeImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvHomeImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgs/img/ic_Home_out.png" />
+                        <Image url="@../../imgs/img/ic_Home_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -40,7 +40,7 @@
                <children>
                   <ImageView fx:id="imgvVowelImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvVowelImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgs/img/ic_Vowel_out.png" />
+                        <Image url="@../../imgs/img/ic_Vowel_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -58,7 +58,7 @@
                <children>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgs/img/ic_Dice_in.png" />
+                        <Image url="@../../imgs/img/ic_Dice_in.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -76,7 +76,7 @@
                <children>
                   <ImageView fx:id="imgvMathImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvMathImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imgs/img/ic_Math_out.png" />
+                        <Image url="@../../imgs/img/ic_Math_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />

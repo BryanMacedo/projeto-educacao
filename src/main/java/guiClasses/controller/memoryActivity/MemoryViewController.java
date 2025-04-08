@@ -110,7 +110,7 @@ public class MemoryViewController implements Initializable {
                     imgvsClicked.clear();
                     if (hits == 6) {
                         try {
-                            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MemoryCongratulationView.fxml"));
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/memoryViews/MemoryCongratulationView.fxml"));
                             Parent root = loader.load();
                             Scene scene = imgvDice1ImgLine1.getScene();
                             scene.setRoot(root);
@@ -442,7 +442,7 @@ public class MemoryViewController implements Initializable {
     private void onImgvMathImgClick(MouseEvent event){
         clickUiSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MathView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/mathViews/MathView.fxml"));
             Parent root = loader.load();
             Scene scene = imgvMathImg.getScene();
             scene.setRoot(root);
@@ -455,7 +455,7 @@ public class MemoryViewController implements Initializable {
     private void onImgvVowelImgClick(MouseEvent event) {
         clickUiSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/VowelView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/vowelViews/VowelView.fxml"));
             Parent root = loader.load();
             Scene scene = imgvVowelImg.getScene();
             scene.setRoot(root);
@@ -468,7 +468,7 @@ public class MemoryViewController implements Initializable {
     private void onImgvHomeImgClick(MouseEvent event) {
         clickUiSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/mainViews/MainView.fxml"));
             Parent root = loader.load();
             Scene scene = imgvHomeImg.getScene();
             scene.setRoot(root);

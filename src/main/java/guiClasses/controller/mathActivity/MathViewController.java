@@ -116,7 +116,7 @@ public class MathViewController implements Initializable {
         }else {
             //chamar a congratulationView
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MathCongratulationView.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/mathViews/MathCongratulationView.fxml"));
                 Parent root = loader.load();
                 Scene scene = labelMain.getScene();
                 scene.setRoot(root);
@@ -364,7 +364,7 @@ public class MathViewController implements Initializable {
     private void onImgvDiceImgClick(MouseEvent event){
         clickUiSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MemoryView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/memoryViews/MemoryView.fxml"));
             Parent root = loader.load();
             Scene scene = imgvDiceImg.getScene();
             scene.setRoot(root);
@@ -377,7 +377,7 @@ public class MathViewController implements Initializable {
     private void onImgvVowelImgClick(MouseEvent event){
         clickUiSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/VowelView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/vowelViews/VowelView.fxml"));
             Parent root = loader.load();
             Scene scene = imgvVowelImg.getScene();
             scene.setRoot(root);
@@ -390,7 +390,7 @@ public class MathViewController implements Initializable {
     private void onImgvHomeImgClick(MouseEvent event){
         clickUiSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/mainViews/MainView.fxml"));
             Parent root = loader.load();
             Scene scene = imgvHomeImg.getScene();
             scene.setRoot(root);
