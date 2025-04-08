@@ -1,4 +1,4 @@
-package model.entities;
+package model.entities.vowelEntities;
 
 public class Word {
     private String fullWords;

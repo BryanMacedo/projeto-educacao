@@ -1,4 +1,4 @@
-package guiClasses.controller;
+package guiClasses.controller.memoryActivity;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
@@ -16,7 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.media.AudioClip;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
-import model.services.DiceInfos;
+import model.services.memoryServices.DiceInfos;
 
 import java.io.IOException;
 import java.net.URL;

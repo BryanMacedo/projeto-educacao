@@ -1,4 +1,4 @@
-package guiClasses.controller;
+package guiClasses.controller.mathActivity;
 
 import db.DB;
 import javafx.animation.FadeTransition;
@@ -14,8 +14,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.AudioClip;
 import javafx.util.Duration;
-import model.entities.MathematicalExpression;
-import model.entities.TypeMathOperation;
+import model.entities.mathEntities.MathematicalExpression;
+import model.entities.mathEntities.TypeMathOperation;
 
 import java.io.IOException;
 import java.net.URL;

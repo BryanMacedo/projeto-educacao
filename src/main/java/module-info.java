@@ -10,4 +10,11 @@ module org.bryanmacedo.atividadesEducacionais {
 
     opens org.bryanmacedo.atividadesEducacionais to javafx.fxml;
     exports org.bryanmacedo.atividadesEducacionais;
+
+    exports guiClasses.controller.memoryActivity to javafx.fxml;
+    opens guiClasses.controller.memoryActivity to javafx.fxml, javafx.graphics;
+    exports guiClasses.controller.mathActivity to javafx.fxml;
+    opens guiClasses.controller.mathActivity to javafx.fxml, javafx.graphics;
+    exports guiClasses.controller.vowelActivity to javafx.fxml;
+    opens guiClasses.controller.vowelActivity to javafx.fxml, javafx.graphics;
 }

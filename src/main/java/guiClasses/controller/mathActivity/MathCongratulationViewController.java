@@ -1,4 +1,4 @@
-package guiClasses.controller;
+package guiClasses.controller.mathActivity;
 
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;

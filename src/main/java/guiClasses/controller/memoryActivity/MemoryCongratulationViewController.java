@@ -1,4 +1,4 @@
-package guiClasses.controller;
+package guiClasses.controller.memoryActivity;
 
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class VowelCongratulationViewController implements Initializable {
+public class MemoryCongratulationViewController implements Initializable {
     private AudioClip congratulationSound;
     private AudioClip clickUiSound;
     private AudioClip clickBackSound;
@@ -26,10 +26,11 @@ public class VowelCongratulationViewController implements Initializable {
     private ImageView imgvHomeImg;
 
     @FXML
-    private ImageView imgvDiceImg;
+    private ImageView imgvVowelImg;
 
     @FXML
     private ImageView imgvMathImg;
+
 
     @FXML
     private Label labelCongratulation;
@@ -44,6 +45,19 @@ public class VowelCongratulationViewController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MathView.fxml"));
             Parent root = loader.load();
             Scene scene = imgvMathImg.getScene();
+            scene.setRoot(root);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    private void onImgvVowelImgClick(MouseEvent event){
+        clickUiSound.play();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/VowelView.fxml"));
+            Parent root = loader.load();
+            Scene scene = imgvHomeImg.getScene();
             scene.setRoot(root);
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -66,23 +80,10 @@ public class VowelCongratulationViewController implements Initializable {
     }
 
     @FXML
-    private void onImgvDiceImgClick(MouseEvent event){
-        clickUiSound.play();
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MemoryView.fxml"));
-            Parent root = loader.load();
-            Scene scene = imgvDiceImg.getScene();
-            scene.setRoot(root);
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    @FXML
     private void onBtPlayAgainAction(){
         clickBackSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/VowelView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MemoryView.fxml"));
             Parent root = loader.load();
             Scene scene = labelCongratulation.getScene();
             scene.setRoot(root);
@@ -107,16 +108,15 @@ public class VowelCongratulationViewController implements Initializable {
 
         congratulationSound.play();
 
-
         btPlayAgain.setDisable(true);
-        imgvDiceImg.setDisable(true);
+        imgvVowelImg.setDisable(true);
         imgvHomeImg.setDisable(true);
         imgvMathImg.setDisable(true);
 
         PauseTransition pause = new PauseTransition(Duration.seconds(4.5));
         pause.setOnFinished(event -> {
             btPlayAgain.setDisable(false);
-            imgvDiceImg.setDisable(false);
+            imgvVowelImg.setDisable(false);
             imgvHomeImg.setDisable(false);
             imgvMathImg.setDisable(false);
         });

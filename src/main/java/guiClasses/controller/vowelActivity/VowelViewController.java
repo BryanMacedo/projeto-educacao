@@ -1,4 +1,4 @@
-package guiClasses.controller;
+package guiClasses.controller.vowelActivity;
 
 import db.DB;
 import db.Exception.DbException;
@@ -16,7 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.AudioClip;
 import javafx.util.Duration;
-import model.entities.Word;
+import model.entities.vowelEntities.Word;
 
 import java.io.IOException;
 import java.net.URL;
