@@ -24,12 +24,13 @@ import java.util.*;
 
 public class MemoryViewController implements Initializable {
     private final Image backImg = new Image(getClass().getResourceAsStream("/imgs/img/BackTest.png"));
+
     private AudioClip clickSound;
     private AudioClip clickUiSound;
     private AudioClip confirmSound;
     private AudioClip errorSound;
-    private List<Integer> numbersLine1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
-    private List<Integer> numbersLine2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
+
+    private List<Integer> numbersImgs = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
     private List<DiceInfos> diceInfosList = new ArrayList<>();
     private List<String> namesImgsFrontL1 = new ArrayList<>();
     private List<String> namesImgsFrontL2 = new ArrayList<>();
@@ -129,7 +130,7 @@ public class MemoryViewController implements Initializable {
                         }
 
                     } else {
-                        // habilita todas as q n estão corretas
+                        // habilita todas as que não estão corretas
                         for (ImageView imageView : imageViewListL1) {
                             if (!right.contains(imageView)) {
                                 imageView.setDisable(false);
@@ -154,23 +155,30 @@ public class MemoryViewController implements Initializable {
                     flipToBack(diceInfosList.get(1).getImgvDice());
                     diceInfosList.clear();
 
-                    if (imgvsClicked.size() > 1) {
-                        imgvsClicked.clear();
+                    // outro pause para não deixar o usuário clicar nos dados enquanto não terminar a rotação deles
+                    PauseTransition pause02 = new PauseTransition(Duration.seconds(0.2));
+                    pause02.setOnFinished(event02 -> {
+                        if (imgvsClicked.size() > 1) {
+                            imgvsClicked.clear();
 
-                        // habilita todas as q n estão corretas
-                        for (ImageView imageView : imageViewListL1) {
-                            if (!right.contains(imageView)) {
-                                imageView.setDisable(false);
+                            // habilita todas as que não estão corretas
+                            //Linha 1
+                            for (ImageView imageView : imageViewListL1) {
+                                if (!right.contains(imageView)) {
+                                    imageView.setDisable(false);
+                                }
+                            }
+
+                            // Linha 2
+                            for (ImageView imageView : imageViewListL2) {
+                                if (!right.contains(imageView)) {
+                                    imageView.setDisable(false);
+                                }
                             }
                         }
 
-                        for (ImageView imageView : imageViewListL2) {
-                            if (!right.contains(imageView)) {
-                                imageView.setDisable(false);
-                            }
-                        }
-                    }
-
+                    });
+                    pause02.play();
 
                 });
                 pause.play();
@@ -293,12 +301,14 @@ public class MemoryViewController implements Initializable {
 
     private void showFrontImgs() {
         // 1. Mostra as cartas viradas para frente
+        // Linha 1
         for (int i = 0; i < imageViewListL1.size(); i++) {
             Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL1.get(i)));
             imageViewListL1.get(i).setImage(newImage);
             imageViewListL1.get(i).setDisable(true);
         }
 
+        // Linha 2
         for (int i = 0; i < imageViewListL2.size(); i++) {
             Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL2.get(i)));
             imageViewListL2.get(i).setImage(newImage);
@@ -390,6 +400,7 @@ public class MemoryViewController implements Initializable {
 
         fadeOut.play();
 
+        // audios
         String soundClickPath = getClass().getResource("/sounds/click/ClickSound01.mp3").toString();
         this.clickSound = new AudioClip(soundClickPath);
         this.clickSound.setVolume(0.2); // volume 0.0 a 1.0
@@ -407,14 +418,17 @@ public class MemoryViewController implements Initializable {
         this.clickUiSound.setVolume(0.3);
 
 
-        Collections.shuffle(numbersLine1);
-        do {
-            Collections.shuffle(numbersLine2);
-        } while (numbersLine1.equals(numbersLine2));
-
+        // nome dos 6 lados da frente do dado
+        // Linha 1
+        Collections.shuffle(numbersImgs);
         for (int i = 0; i < 6; i++) {
-            namesImgsFrontL1.add("FrontTest" + numbersLine1.get(i) + ".png");
-            namesImgsFrontL2.add("FrontTest" + numbersLine2.get(i) + ".png");
+            namesImgsFrontL1.add("FrontTest" + numbersImgs.get(i) + ".png");
+        }
+
+        // Linha 2
+        Collections.shuffle(numbersImgs);
+        for (int i = 0; i < 6; i++) {
+            namesImgsFrontL2.add("FrontTest" + numbersImgs.get(i) + ".png");
         }
 
         //L1
