@@ -69,6 +69,6 @@ public class MainViewController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String soundClickPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
         this.clickUiSound = new AudioClip(soundClickPath);
-        this.clickUiSound.setVolume(0.3);
+        this.clickUiSound.setVolume(0.1);
     }
 }

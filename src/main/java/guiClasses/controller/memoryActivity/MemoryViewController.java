@@ -415,7 +415,7 @@ public class MemoryViewController implements Initializable {
 
         String soundClickOnUiPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
         this.clickUiSound = new AudioClip(soundClickOnUiPath);
-        this.clickUiSound.setVolume(0.3);
+        this.clickUiSound.setVolume(0.1);
 
 
         // nome dos 6 lados da frente do dado

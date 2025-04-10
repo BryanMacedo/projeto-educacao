@@ -100,7 +100,7 @@ public class MemoryCongratulationViewController implements Initializable {
 
         String soundClickOnUiPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
         this.clickUiSound = new AudioClip(soundClickOnUiPath);
-        this.clickUiSound.setVolume(0.3);
+        this.clickUiSound.setVolume(0.1);
 
         String soundBackPath = getClass().getResource("/sounds/back/BackSound01.mp3").toString();
         this.clickBackSound = new AudioClip(soundBackPath);

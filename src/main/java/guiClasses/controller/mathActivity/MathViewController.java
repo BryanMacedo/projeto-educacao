@@ -312,7 +312,7 @@ public class MathViewController implements Initializable {
 
         String soundClickOnUiPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
         this.clickUiSound = new AudioClip(soundClickOnUiPath);
-        this.clickUiSound.setVolume(0.3);
+        this.clickUiSound.setVolume(0.1);
 
         String soundClickPath = getClass().getResource("/sounds/click/ClickSound01.mp3").toString();
         this.clickSound = new AudioClip(soundClickPath);
