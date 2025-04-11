@@ -23,7 +23,7 @@ import java.net.URL;
 import java.util.*;
 
 public class MemoryViewController implements Initializable {
-    private final Image backImg = new Image(getClass().getResourceAsStream("/imgs/img/BackTest.png"));
+    private final Image backImg = new Image(getClass().getResourceAsStream("/imgs/img/imgsMemoryActivity/Back.png"));
 
     private AudioClip clickSound;
     private AudioClip clickUiSound;
@@ -199,7 +199,7 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private void onImgvDice1ImgLine1Action() {
-        int imgId = Character.getNumericValue(namesImgsFrontL1.get(0).charAt(9));
+        int imgId = Character.getNumericValue(namesImgsFrontL1.get(0).charAt(4));
         onClick(imgId, imgvDice1ImgLine1, 0, true);
         imgvDice1ImgLine1.setDisable(true);
         imgvsClicked.add(imgvDice1ImgLine1);
@@ -207,7 +207,7 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private void onImgvDice2ImgLine1Action() {
-        int imgId = Character.getNumericValue(namesImgsFrontL1.get(1).charAt(9));
+        int imgId = Character.getNumericValue(namesImgsFrontL1.get(1).charAt(4));
         onClick(imgId, imgvDice2ImgLine1, 1, true);
         imgvDice2ImgLine1.setDisable(true);
         imgvsClicked.add(imgvDice2ImgLine1);
@@ -215,7 +215,7 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private void onImgvDice3ImgLine1Action() {
-        int imgId = Character.getNumericValue(namesImgsFrontL1.get(2).charAt(9));
+        int imgId = Character.getNumericValue(namesImgsFrontL1.get(2).charAt(4));
         onClick(imgId, imgvDice3ImgLine1, 2, true);
         imgvDice3ImgLine1.setDisable(true);
         imgvsClicked.add(imgvDice3ImgLine1);
@@ -223,7 +223,7 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private void onImgvDice4ImgLine1Action() {
-        int imgId = Character.getNumericValue(namesImgsFrontL1.get(3).charAt(9));
+        int imgId = Character.getNumericValue(namesImgsFrontL1.get(3).charAt(4));
         onClick(imgId, imgvDice4ImgLine1, 3, true);
         imgvDice4ImgLine1.setDisable(true);
         imgvsClicked.add(imgvDice4ImgLine1);
@@ -231,7 +231,7 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private void onImgvDice5ImgLine1Action() {
-        int imgId = Character.getNumericValue(namesImgsFrontL1.get(4).charAt(9));
+        int imgId = Character.getNumericValue(namesImgsFrontL1.get(4).charAt(4));
         onClick(imgId, imgvDice5ImgLine1, 4, true);
         imgvDice5ImgLine1.setDisable(true);
         imgvsClicked.add(imgvDice5ImgLine1);
@@ -239,7 +239,7 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private void onImgvDice6ImgLine1Action() {
-        int imgId = Character.getNumericValue(namesImgsFrontL1.get(5).charAt(9));
+        int imgId = Character.getNumericValue(namesImgsFrontL1.get(5).charAt(4));
         onClick(imgId, imgvDice6ImgLine1, 5, true);
         imgvDice6ImgLine1.setDisable(true);
         imgvsClicked.add(imgvDice6ImgLine1);
@@ -251,7 +251,7 @@ public class MemoryViewController implements Initializable {
     // revela a imagem da Linha 2 - inicio
     @FXML
     private void onImgvDice1ImgLine2Action() {
-        int imgId = Character.getNumericValue(namesImgsFrontL2.get(0).charAt(9));
+        int imgId = Character.getNumericValue(namesImgsFrontL2.get(0).charAt(4));
         onClick(imgId, imgvDice1ImgLine2, 0, false);
         imgvDice1ImgLine2.setDisable(true);
         imgvsClicked.add(imgvDice1ImgLine2);
@@ -259,7 +259,7 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private void onImgvDice2ImgLine2Action() {
-        int imgId = Character.getNumericValue(namesImgsFrontL2.get(1).charAt(9));
+        int imgId = Character.getNumericValue(namesImgsFrontL2.get(1).charAt(4));
         onClick(imgId, imgvDice2ImgLine2, 1, false);
         imgvDice2ImgLine2.setDisable(true);
         imgvsClicked.add(imgvDice2ImgLine2);
@@ -267,7 +267,7 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private void onImgvDice3ImgLine2Action() {
-        int imgId = Character.getNumericValue(namesImgsFrontL2.get(2).charAt(9));
+        int imgId = Character.getNumericValue(namesImgsFrontL2.get(2).charAt(4));
         onClick(imgId, imgvDice3ImgLine2, 2, false);
         imgvDice3ImgLine2.setDisable(true);
         imgvsClicked.add(imgvDice3ImgLine2);
@@ -275,7 +275,7 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private void onImgvDice4ImgLine2Action() {
-        int imgId = Character.getNumericValue(namesImgsFrontL2.get(3).charAt(9));
+        int imgId = Character.getNumericValue(namesImgsFrontL2.get(3).charAt(4));
         onClick(imgId, imgvDice4ImgLine2, 3, false);
         imgvDice4ImgLine2.setDisable(true);
         imgvsClicked.add(imgvDice4ImgLine2);
@@ -283,7 +283,7 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private void onImgvDice5ImgLine2Action() {
-        int imgId = Character.getNumericValue(namesImgsFrontL2.get(4).charAt(9));
+        int imgId = Character.getNumericValue(namesImgsFrontL2.get(4).charAt(4));
         onClick(imgId, imgvDice5ImgLine2, 4, false);
         imgvDice5ImgLine2.setDisable(true);
         imgvsClicked.add(imgvDice5ImgLine2);
@@ -291,7 +291,7 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private void onImgvDice6ImgLine2Action() {
-        int imgId = Character.getNumericValue(namesImgsFrontL2.get(5).charAt(9));
+        int imgId = Character.getNumericValue(namesImgsFrontL2.get(5).charAt(4));
         onClick(imgId, imgvDice6ImgLine2, 5, false);
         imgvDice6ImgLine2.setDisable(true);
         imgvsClicked.add(imgvDice6ImgLine2);
@@ -303,14 +303,14 @@ public class MemoryViewController implements Initializable {
         // 1. Mostra as cartas viradas para frente
         // Linha 1
         for (int i = 0; i < imageViewListL1.size(); i++) {
-            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL1.get(i)));
+            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/imgsMemoryActivity/" + namesImgsFrontL1.get(i)));
             imageViewListL1.get(i).setImage(newImage);
             imageViewListL1.get(i).setDisable(true);
         }
 
         // Linha 2
         for (int i = 0; i < imageViewListL2.size(); i++) {
-            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL2.get(i)));
+            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/imgsMemoryActivity/" + namesImgsFrontL2.get(i)));
             imageViewListL2.get(i).setImage(newImage);
             imageViewListL2.get(i).setDisable(true);
         }
@@ -344,9 +344,9 @@ public class MemoryViewController implements Initializable {
             // carrega a nova imagem quando estiver de lado
             Image newImage;
             if (line) {
-                newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL1.get(index)));
+                newImage = new Image(getClass().getResourceAsStream("/imgs/img/imgsMemoryActivity/" + namesImgsFrontL1.get(index)));
             } else {
-                newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + namesImgsFrontL2.get(index)));
+                newImage = new Image(getClass().getResourceAsStream("/imgs/img/imgsMemoryActivity/" + namesImgsFrontL2.get(index)));
             }
             imageView.setImage(newImage);
 
@@ -422,13 +422,13 @@ public class MemoryViewController implements Initializable {
         // Linha 1
         Collections.shuffle(numbersImgs);
         for (int i = 0; i < 6; i++) {
-            namesImgsFrontL1.add("FrontTest" + numbersImgs.get(i) + ".png");
+            namesImgsFrontL1.add("Dice" + numbersImgs.get(i) + ".png");
         }
 
         // Linha 2
         Collections.shuffle(numbersImgs);
         for (int i = 0; i < 6; i++) {
-            namesImgsFrontL2.add("FrontTest" + numbersImgs.get(i) + ".png");
+            namesImgsFrontL2.add("Dice" + numbersImgs.get(i) + ".png");
         }
 
         //L1
