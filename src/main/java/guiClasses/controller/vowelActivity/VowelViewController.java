@@ -186,7 +186,7 @@ public class VowelViewController implements Initializable {
     private void next() {
         if (!words.isEmpty()) {
             labelWordToComplete.setText(words.get(0).getWordWith_());
-            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + words.get(0).getImgName()));
+            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/imgsVowelActivity/" + words.get(0).getImgName()));
             MainImage.setImage(newImage);
         } else {
             try {
@@ -227,13 +227,13 @@ public class VowelViewController implements Initializable {
 
         if (!words.isEmpty()) {
             labelWordToComplete.setText(words.get(0).getWordWith_());
-            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/" + words.get(0).getImgName()));
+            Image newImage = new Image(getClass().getResourceAsStream("/imgs/img/imgsVowelActivity/" + words.get(0).getImgName()));
             MainImage.setImage(newImage);
         }
 
         FadeTransition fadeOut = new FadeTransition(Duration.seconds(2), explanatoryText);
-        fadeOut.setFromValue(1.0); // Opacidade inicial (totalmente visível)
-        fadeOut.setToValue(0.0);   // Opacidade final (totalmente invisível)
+        fadeOut.setFromValue(1.0);
+        fadeOut.setToValue(0.0);
         fadeOut.setDelay(Duration.seconds(4));
 
         fadeOut.play();

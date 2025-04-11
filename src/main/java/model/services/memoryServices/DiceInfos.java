@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class DiceInfos {
-    Image backImg = new Image(getClass().getResourceAsStream("/imgs/img/BackTest.png"));
+    Image backImg = new Image(getClass().getResourceAsStream("/imgs/img/imgsMemoryActivity/Back.png"));
     private int imgId;
     private ImageView imgvDice;
 
