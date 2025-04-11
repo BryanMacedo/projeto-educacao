@@ -100,7 +100,7 @@
                   <Insets />
                </HBox.margin>
                <image>
-                  <Image url="@../../imgs/img/img_books.png" />
+                  <Image url="@../../imgs/img/imgsMainView/img_books.png" />
                </image>
             </ImageView>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0">
