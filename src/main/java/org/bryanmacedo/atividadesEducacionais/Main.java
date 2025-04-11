@@ -17,7 +17,7 @@ public class Main extends Application {
         //primaryStage.setMaximized(true);
         primaryStage.show();
 
-        Image icon = new Image(getClass().getResourceAsStream("/imgs/img/IconTest01.png"));
+        Image icon = new Image(getClass().getResourceAsStream("/imgs/icons/iconApp/Icon.png"));
         primaryStage.getIcons().add(icon);
     }
 

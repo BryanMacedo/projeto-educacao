@@ -22,7 +22,7 @@
                <children>
                   <ImageView fx:id="imgvHomeImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvHomeImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../imgs/img/ic_Home_out.png" />
+                        <Image url="@../../imgs/icons/iconsUI/ic_Home_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -40,7 +40,7 @@
                <children>
                   <ImageView fx:id="imgvVowelImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvVowelImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../imgs/img/ic_Vowel_out.png" />
+                        <Image url="@../../imgs/icons/iconsUI/ic_Vowel_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -58,7 +58,7 @@
                <children>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../imgs/img/ic_Dice_in.png" />
+                        <Image url="@../../imgs/icons/iconsUI/ic_Dice_in.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -76,7 +76,7 @@
                <children>
                   <ImageView fx:id="imgvMathImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvMathImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../imgs/img/ic_Math_out.png" />
+                        <Image url="@../../imgs/icons/iconsUI/ic_Math_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -96,6 +96,14 @@
    <center>
       <StackPane fx:id="spCardContainer" alignment="CENTER" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
+            <Label fx:id="explanatoryText" text="Clique nos quadrados para achar os pares" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets bottom="600.0" />
+               </StackPane.margin>
+            </Label>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
                   <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0">
@@ -204,14 +212,6 @@
                   </HBox>
                </children>
             </VBox>
-            <Label fx:id="explanatoryText" text="Clique nos quadrados para achar os pares" textFill="WHITE">
-               <font>
-                  <Font size="48.0" />
-               </font>
-               <StackPane.margin>
-                  <Insets bottom="600.0" />
-               </StackPane.margin>
-            </Label>
          </children>
       </StackPane>
    </center>

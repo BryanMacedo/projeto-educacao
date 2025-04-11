@@ -22,7 +22,7 @@
                <children>
                   <ImageView fx:id="imgvHomeImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvHomeImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../imgs/img/ic_Home_out.png" />
+                        <Image url="@../../imgs/icons/iconsUI/ic_Home_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -40,7 +40,7 @@
                <children>
                   <ImageView fx:id="imgvVowelImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvVowelImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../imgs/img/ic_Vowel_out.png" />
+                        <Image url="@../../imgs/icons/iconsUI/ic_Vowel_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -58,7 +58,7 @@
                <children>
                   <ImageView fx:id="imgvDiceImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvDiceImgClick" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../imgs/img/ic_Dice_out.png" />
+                        <Image url="@../../imgs/icons/iconsUI/ic_Dice_out.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
@@ -76,7 +76,7 @@
                <children>
                   <ImageView fx:id="imgvMathImg" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../imgs/img/ic_Math_in.png" />
+                        <Image url="@../../imgs/icons/iconsUI/ic_Math_in.png" />
                      </image>
                      <styleClass>
                         <String fx:value="cursor-image" />
