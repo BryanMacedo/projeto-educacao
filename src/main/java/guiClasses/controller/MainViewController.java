@@ -28,12 +28,13 @@ public class MainViewController implements Initializable {
     private void onImgvMathImgClick(MouseEvent event){
         clickUiSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/mathViews/MathView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/mathViews/ChooseMathView.fxml"));
             Parent root = loader.load();
             Scene scene = imgvVowelImg.getScene();
             scene.setRoot(root);
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            //System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
