@@ -63,18 +63,22 @@ public class ChooseMathViewController implements Initializable {
     private Button btStart;
 
     private AudioClip clickSound;
+    private AudioClip clickUnselectSound;
     private AudioClip errorSound;
+    private AudioClip clickUiSound;
+    private AudioClip clickBtSound;
 
     private void changeImgvs(ImageView idImageView, Image selectedImg, Image unselectedImg, TypeMathOperation mathOperation){
         if (!mathOperations.contains(mathOperation)){
+            clickSound.play();
             labelEarlyExpression.setStyle("-fx-text-fill: white;");
             idImageView.setImage(selectedImg);
             mathOperations.add(mathOperation);
         }else {
+            clickUnselectSound.play();
             idImageView.setImage(unselectedImg);
             mathOperations.remove(mathOperation);
         }
-        System.out.println(mathOperations);
     }
 
     @FXML
@@ -107,6 +111,7 @@ public class ChooseMathViewController implements Initializable {
     @FXML
     private void onBtStartAction(){
         if (!mathOperations.isEmpty()){
+            clickBtSound.play();
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/mathViews/MathView.fxml"));
                 Parent root = loader.load();
@@ -134,14 +139,28 @@ public class ChooseMathViewController implements Initializable {
         this.clickSound = new AudioClip(soundClickPath);
         this.clickSound.setVolume(0.2);
 
+        String soundClickUnselectPath = getClass().getResource("/sounds/click/ClickSound01Unselect.mp3").toString();
+        this.clickUnselectSound = new AudioClip(soundClickUnselectPath);
+        this.clickUnselectSound.setVolume(0.2);
+
         String soundErrorPath = getClass().getResource("/sounds/error/ErrorSound01.mp3").toString();
         this.errorSound = new AudioClip(soundErrorPath);
         this.errorSound.setVolume(0.3);
+
+        String soundClickOnUiPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
+        this.clickUiSound = new AudioClip(soundClickOnUiPath);
+        this.clickUiSound.setVolume(0.1);
+
+        String soundClickBtStartPath = getClass().getResource("/sounds/click/ClickSoundBtStart.mp3").toString();
+        this.clickBtSound = new AudioClip(soundClickBtStartPath);
+        this.clickBtSound.setVolume(0.3);
+
+
     }
 
     @FXML
     private void onImgvDiceImgClick(MouseEvent event) {
-        //clickUiSound.play();
+        clickUiSound.play();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/memoryViews/MemoryView.fxml"));
             Parent root = loader.load();
@@ -154,7 +173,7 @@ public class ChooseMathViewController implements Initializable {
 
     @FXML
     private void onImgvVowelImgClick(MouseEvent event) {
-        //clickUiSound.play();
+        clickUiSound.play();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/vowelViews/VowelView.fxml"));
             Parent root = loader.load();
@@ -167,7 +186,7 @@ public class ChooseMathViewController implements Initializable {
 
     @FXML
     private void onImgvHomeImgClick(MouseEvent event) {
-        //clickUiSound.play();
+        clickUiSound.play();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/mainViews/MainView.fxml"));
             Parent root = loader.load();

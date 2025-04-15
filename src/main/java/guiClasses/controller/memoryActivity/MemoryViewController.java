@@ -456,7 +456,7 @@ public class MemoryViewController implements Initializable {
     private void onImgvMathImgClick(MouseEvent event){
         clickUiSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/mathViews/MathView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/mathViews/ChooseMathView.fxml"));
             Parent root = loader.load();
             Scene scene = imgvMathImg.getScene();
             scene.setRoot(root);
