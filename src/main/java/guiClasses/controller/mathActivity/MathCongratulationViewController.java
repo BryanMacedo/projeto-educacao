@@ -87,7 +87,7 @@ public class MathCongratulationViewController implements Initializable {
     private void onBtPlayAgainAction(){
         clickBackSound.play();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/mathViews/MathView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/mathViews/ChooseMathView.fxml"));
             Parent root = loader.load();
             Scene scene = labelCongratulation.getScene();
             scene.setRoot(root);

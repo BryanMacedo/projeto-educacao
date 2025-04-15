@@ -153,7 +153,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" text="COMEÇAR">
+                        <Button fx:id="btStart" mnemonicParsing="false" onAction="#onBtStartAction" text="COMEÇAR">
                            <styleClass>
                               <String fx:value="playAgain-button" />
                               <String fx:value="playAgainHover" />
@@ -163,7 +163,7 @@
                   </HBox>
                </children>
             </VBox>
-            <Label fx:id="explanatoryText" text="Selecione um ou mais tipos de operações" textFill="WHITE">
+            <Label fx:id="labelEarlyExpression" text="Selecione um ou mais tipos de operações" textFill="WHITE">
                <font>
                   <Font size="48.0" />
                </font>
