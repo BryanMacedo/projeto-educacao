@@ -4,6 +4,7 @@ import db.DB;
 import db.Exception.DbException;
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -70,7 +71,14 @@ public class VowelViewController implements Initializable {
     @FXML
     private Button btLetterU;
 
+    @FXML
+    private ImageView imgvCloseImg;
 
+    @FXML
+    private void onImgvCloseImgClick(MouseEvent event){
+        clickUiSound.play();
+        Platform.exit();
+    }
 
     @FXML
     private void onImgvMathImgClick(MouseEvent event){

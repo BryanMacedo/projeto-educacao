@@ -4,6 +4,7 @@ import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.PauseTransition;
 import javafx.animation.RotateTransition;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -87,6 +88,15 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private Label explanatoryText;
+
+    @FXML
+    private ImageView imgvCloseImg;
+
+    @FXML
+    private void onImgvCloseImgClick(MouseEvent event){
+        clickUiSound.play();
+        Platform.exit();
+    }
 
     private void checkIds() {
         if (diceInfosList.size() > 1) {

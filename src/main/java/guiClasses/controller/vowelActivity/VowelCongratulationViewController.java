@@ -1,6 +1,7 @@
 package guiClasses.controller.vowelActivity;
 
 import javafx.animation.PauseTransition;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -36,6 +37,15 @@ public class VowelCongratulationViewController implements Initializable {
 
     @FXML
     private Button btPlayAgain;
+
+    @FXML
+    private ImageView imgvCloseImg;
+
+    @FXML
+    private void onImgvCloseImgClick(MouseEvent event){
+        clickUiSound.play();
+        Platform.exit();
+    }
 
     @FXML
     private void onImgvMathImgClick(MouseEvent event){

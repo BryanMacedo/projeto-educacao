@@ -3,6 +3,7 @@ package guiClasses.controller.mathActivity;
 import db.DB;
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -75,6 +76,15 @@ public class MathViewController implements Initializable {
 
     @FXML
     private Button btR4;
+
+    @FXML
+    private ImageView imgvCloseImg;
+
+    @FXML
+    private void onImgvCloseImgClick(MouseEvent event){
+        clickUiSound.play();
+        Platform.exit();
+    }
 
     @FXML
     private void onBtR1Action(){

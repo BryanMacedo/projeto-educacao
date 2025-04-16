@@ -1,6 +1,7 @@
 package guiClasses.controller.mathActivity;
 
 import javafx.animation.PauseTransition;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -67,6 +68,15 @@ public class ChooseMathViewController implements Initializable {
     private AudioClip errorSound;
     private AudioClip clickUiSound;
     private AudioClip clickBtSound;
+
+    @FXML
+    private ImageView imgvCloseImg;
+
+    @FXML
+    private void onImgvCloseImgClick(MouseEvent event){
+        clickUiSound.play();
+        Platform.exit();
+    }
 
     private void changeImgvs(ImageView idImageView, Image selectedImg, Image unselectedImg, TypeMathOperation mathOperation){
         if (!mathOperations.contains(mathOperation)){

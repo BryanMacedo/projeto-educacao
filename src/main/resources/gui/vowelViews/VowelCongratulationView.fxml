@@ -8,90 +8,107 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="833.0" prefWidth="1300.0" styleClass="dark-background" stylesheets="@../../styles/style.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiClasses.controller.vowelActivity.VowelCongratulationViewController">
    <top>
-      <HBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="200.0" spacing="20.0" styleClass="border-bottom" stylesheets="@../../styles/style.css" BorderPane.alignment="CENTER">
+      <StackPane BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="23.0" right="30.0" />
          </BorderPane.margin>
          <children>
-            <VBox alignment="CENTER" prefHeight="123.0" prefWidth="0.0">
+            <HBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="200.0" spacing="20.0" styleClass="border-bottom" stylesheets="@../../styles/style.css">
                <children>
-                  <ImageView fx:id="imgvHomeImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvHomeImgClick" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../imgs/icons/iconsUI/ic_Home_out.png" />
-                     </image>
-                     <styleClass>
-                        <String fx:value="cursor-image" />
-                        <String fx:value="imageHover" />
-                     </styleClass>
-                  </ImageView>
-                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="123.0" text="Inicio" textFill="#4f4f4f">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
+                  <VBox alignment="CENTER" prefHeight="123.0" prefWidth="0.0">
+                     <children>
+                        <ImageView fx:id="imgvHomeImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvHomeImgClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../imgs/icons/iconsUI/ic_Home_out.png" />
+                           </image>
+                           <styleClass>
+                              <String fx:value="cursor-image" />
+                              <String fx:value="imageHover" />
+                           </styleClass>
+                        </ImageView>
+                        <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="123.0" text="Inicio" textFill="#4f4f4f">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="123.0" prefWidth="26.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../imgs/icons/iconsUI/ic_Vowel_in.png" />
+                           </image>
+                           <styleClass>
+                              <String fx:value="cursor-image" />
+                              <String fx:value="imageHover" />
+                           </styleClass>
+                        </ImageView>
+                        <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="123.0" text="Vogais" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="123.0" prefWidth="51.0">
+                     <children>
+                        <ImageView fx:id="imgvDiceImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvDiceImgClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../imgs/icons/iconsUI/ic_Dice_out.png" />
+                           </image>
+                           <styleClass>
+                              <String fx:value="cursor-image" />
+                              <String fx:value="imageHover" />
+                           </styleClass>
+                        </ImageView>
+                        <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="76.0" text="Memória" textFill="#4f4f4f">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="123.0" prefWidth="47.0">
+                     <children>
+                        <ImageView fx:id="imgvMathImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvMathImgClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../imgs/icons/iconsUI/ic_Math_out.png" />
+                           </image>
+                           <styleClass>
+                              <String fx:value="cursor-image" />
+                              <String fx:value="imageHover" />
+                           </styleClass>
+                        </ImageView>
+                        <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="47.0" text="Calcule" textFill="#4f4f4f">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
                </children>
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="123.0" prefWidth="26.0">
-               <children>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../imgs/icons/iconsUI/ic_Vowel_in.png" />
-                     </image>
-                     <styleClass>
-                        <String fx:value="cursor-image" />
-                        <String fx:value="imageHover" />
-                     </styleClass>
-                  </ImageView>
-                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="123.0" text="Vogais" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="123.0" prefWidth="51.0">
-               <children>
-                  <ImageView fx:id="imgvDiceImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvDiceImgClick" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../imgs/icons/iconsUI/ic_Dice_out.png" />
-                     </image>
-                     <styleClass>
-                        <String fx:value="cursor-image" />
-                        <String fx:value="imageHover" />
-                     </styleClass>
-                  </ImageView>
-                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="76.0" text="Memória" textFill="#4f4f4f">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="123.0" prefWidth="47.0">
-               <children>
-                  <ImageView fx:id="imgvMathImg" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onImgvMathImgClick" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../imgs/icons/iconsUI/ic_Math_out.png" />
-                     </image>
-                     <styleClass>
-                        <String fx:value="cursor-image" />
-                        <String fx:value="imageHover" />
-                     </styleClass>
-                  </ImageView>
-                  <Label alignment="CENTER" lineSpacing="10.0" prefHeight="37.0" prefWidth="47.0" text="Calcule" textFill="#4f4f4f">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
+            </HBox>
+            <ImageView fx:id="imgvCloseImg" fitHeight="46.0" fitWidth="38.0" onMouseClicked="#onImgvCloseImgClick" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <image>
+                  <Image url="@../../imgs/icons/iconsUI/ic_Close.png" />
+               </image>
+               <styleClass>
+                  <String fx:value="cursor-image" />
+                  <String fx:value="imageHover" />
+               </styleClass>
+               <StackPane.margin>
+                  <Insets top="15.0" />
+               </StackPane.margin>
+            </ImageView>
          </children>
-      </HBox>
+      </StackPane>
    </top>
    <center>
       <VBox alignment="CENTER" onMouseClicked="#onImgvHomeImgClick" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
