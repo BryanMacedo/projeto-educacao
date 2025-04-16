@@ -41,6 +41,7 @@ public class MathViewController implements Initializable {
     private AudioClip clickSound;
     private AudioClip confirmSound;
     private AudioClip errorSound;
+    private AudioClip clickCloseSound;
 
     @FXML
     private ImageView imgvHomeImg;
@@ -82,7 +83,7 @@ public class MathViewController implements Initializable {
 
     @FXML
     private void onImgvCloseImgClick(MouseEvent event){
-        clickUiSound.play();
+        clickCloseSound.play();
         Platform.exit();
     }
 
@@ -391,6 +392,10 @@ public class MathViewController implements Initializable {
         String soundErrorPath = getClass().getResource("/sounds/error/ErrorSound01.mp3").toString();
         this.errorSound = new AudioClip(soundErrorPath);
         this.errorSound.setVolume(0.3);
+
+        String soundClosePath = getClass().getResource("/sounds/close/closeSound.mp3").toString();
+        this.clickCloseSound = new AudioClip(soundClosePath);
+        this.clickCloseSound.setVolume(1.0);
 
         Connection conn = null;
         PreparedStatement st = null;

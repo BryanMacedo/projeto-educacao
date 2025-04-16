@@ -22,6 +22,7 @@ public class MathCongratulationViewController implements Initializable {
     private AudioClip congratulationSound;
     private AudioClip clickUiSound;
     private AudioClip clickBackSound;
+    private AudioClip clickCloseSound;
 
     @FXML
     private ImageView imgvVowelImg;
@@ -46,7 +47,7 @@ public class MathCongratulationViewController implements Initializable {
 
     @FXML
     private void onImgvCloseImgClick(MouseEvent event){
-        clickUiSound.play();
+        clickCloseSound.play();
         Platform.exit();
     }
 
@@ -119,6 +120,10 @@ public class MathCongratulationViewController implements Initializable {
         String soundBackPath = getClass().getResource("/sounds/back/BackSound01.mp3").toString();
         this.clickBackSound = new AudioClip(soundBackPath);
         this.clickBackSound.setVolume(0.3);
+
+        String soundClosePath = getClass().getResource("/sounds/close/closeSound.mp3").toString();
+        this.clickCloseSound = new AudioClip(soundClosePath);
+        this.clickCloseSound.setVolume(1.0);
 
         congratulationSound.play();
 

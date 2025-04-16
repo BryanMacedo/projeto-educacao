@@ -35,6 +35,8 @@ public class VowelViewController implements Initializable {
     private AudioClip clickUiSound;
     private AudioClip confirmSound;
     private AudioClip errorSound;
+    private AudioClip clickCloseSound;
+
     private List<Word> words = new ArrayList<>();
     private List<Button> bts = new ArrayList<>();
 
@@ -76,7 +78,7 @@ public class VowelViewController implements Initializable {
 
     @FXML
     private void onImgvCloseImgClick(MouseEvent event){
-        clickUiSound.play();
+        clickCloseSound.play();
         Platform.exit();
     }
 
@@ -261,6 +263,10 @@ public class VowelViewController implements Initializable {
         String soundClickOnUiPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
         this.clickUiSound = new AudioClip(soundClickOnUiPath);
         this.clickUiSound.setVolume(0.1);
+
+        String soundClosePath = getClass().getResource("/sounds/close/closeSound.mp3").toString();
+        this.clickCloseSound = new AudioClip(soundClosePath);
+        this.clickCloseSound.setVolume(1.0);
 
         bts.add(btLetterA);
         bts.add(btLetterE);

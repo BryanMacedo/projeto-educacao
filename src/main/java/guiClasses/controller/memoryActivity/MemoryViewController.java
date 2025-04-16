@@ -30,6 +30,7 @@ public class MemoryViewController implements Initializable {
     private AudioClip clickUiSound;
     private AudioClip confirmSound;
     private AudioClip errorSound;
+    private AudioClip clickCloseSound;
 
     private List<Integer> numbersImgs = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
     private List<DiceInfos> diceInfosList = new ArrayList<>();
@@ -94,7 +95,7 @@ public class MemoryViewController implements Initializable {
 
     @FXML
     private void onImgvCloseImgClick(MouseEvent event){
-        clickUiSound.play();
+        clickCloseSound.play();
         Platform.exit();
     }
 
@@ -426,6 +427,10 @@ public class MemoryViewController implements Initializable {
         String soundClickOnUiPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
         this.clickUiSound = new AudioClip(soundClickOnUiPath);
         this.clickUiSound.setVolume(0.1);
+
+        String soundClosePath = getClass().getResource("/sounds/close/closeSound.mp3").toString();
+        this.clickCloseSound = new AudioClip(soundClosePath);
+        this.clickCloseSound.setVolume(1.0);
 
 
         // nome dos 6 lados da frente do dado

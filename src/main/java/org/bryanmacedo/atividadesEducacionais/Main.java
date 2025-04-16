@@ -7,9 +7,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
+import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    private  AudioClip startSound;
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/gui/mainViews/MainView.fxml"));
@@ -21,6 +23,13 @@ public class Main extends Application {
 
         Image icon = new Image(getClass().getResourceAsStream("/imgs/icons/iconApp/Icon.png"));
         primaryStage.getIcons().add(icon);
+
+        String soundStartPath = getClass().getResource("/sounds/start/startSound.mp3").toString();
+        this.startSound = new AudioClip(soundStartPath);
+        this.startSound.setVolume(0.3);
+
+        startSound.play();
+
     }
 
 

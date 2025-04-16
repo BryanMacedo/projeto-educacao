@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 
 public class MainViewController implements Initializable {
     private AudioClip clickUiSound;
+    private AudioClip clickCloseSound;
     @FXML
     private ImageView imgvVowelImg;
 
@@ -30,7 +31,7 @@ public class MainViewController implements Initializable {
 
     @FXML
     private void onImgvCloseImgClick(MouseEvent event){
-        clickUiSound.play();
+        clickCloseSound.play();
         Platform.exit();
     }
 
@@ -80,5 +81,9 @@ public class MainViewController implements Initializable {
         String soundClickPath = getClass().getResource("/sounds/click/ClickOnUI01.mp3").toString();
         this.clickUiSound = new AudioClip(soundClickPath);
         this.clickUiSound.setVolume(0.1);
+
+        String soundClosePath = getClass().getResource("/sounds/close/closeSound.mp3").toString();
+        this.clickCloseSound = new AudioClip(soundClosePath);
+        this.clickCloseSound.setVolume(1.0);
     }
 }
